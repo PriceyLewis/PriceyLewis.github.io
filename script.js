@@ -22,6 +22,7 @@ function addCvDownload(selector) {
   actions.insertBefore(link, actions.children[1] || null);
 }
 
+// Keep CV access visible without introducing a separate, distracting CV section.
 addCvDownload('.hero-actions');
 addCvDownload('.cta-actions');
 
