@@ -3,18 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Lewis Price — software, technical support and product engineering portfolio.">
-  <title>Lewis Price | Technical Portfolio</title>
+  <meta name="description" content="Lewis Price — First-Class Computer Science graduate, software builder and 1st Line IT Support Analyst. Portfolio featuring PredictMyGrade, Guardian Antivirus, Student Toolkit OS and a Java dissertation project.">
+  <meta name="theme-color" content="#0a0d12">
+  <meta property="og:title" content="Lewis Price | Software & Technical Portfolio">
+  <meta property="og:description" content="Recruiter-facing portfolio covering full-stack, desktop, mobile and technical support work.">
+  <meta property="og:type" content="website">
+  <title>Lewis Price | Software & Technical Portfolio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="#top">Lewis<span>.</span>Price</a>
+    <a class="brand" href="#top" aria-label="Lewis Price portfolio home">Lewis<span>.</span>Price</a>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
       <a class="nav-cta" href="https://github.com/PriceyLewis" target="_blank" rel="noreferrer">GitHub ↗</a>
     </nav>
   </div>
@@ -24,77 +29,108 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Software · Support · Product Engineering</div>
-        <h1>I build useful software and solve technical problems.</h1>
-        <p class="hero-copy">First-Class Computer Science graduate and 1st Line IT Support Analyst with hands-on experience across web applications, mobile products, desktop software, databases and technical support.</p>
+        <div class="eyebrow">Software Engineering · Application Support · Technical Operations</div>
+        <h1>I build software and solve problems in live systems.</h1>
+        <p class="hero-copy">I’m Lewis Price, a First-Class Computer Science graduate and 1st Line IT Support Analyst. I build practical software across web, desktop and mobile stacks, while supporting business-critical technology in a live retail environment.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore my projects</a>
-          <a class="btn secondary" href="https://github.com/PriceyLewis" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="btn primary" href="#projects">View selected projects</a>
+          <a class="btn secondary" href="mailto:lplooking135@outlook.com">Contact me</a>
+        </div>
+        <div class="hero-proof" aria-label="Profile highlights">
+          <div><strong>First-Class</strong><span>BSc Computer Science</span></div>
+          <div><strong>4</strong><span>Featured case studies</span></div>
+          <div><strong>Web · Desktop · Mobile</strong><span>Multi-stack project experience</span></div>
         </div>
       </div>
       <div class="hero-panel" aria-label="Technical profile preview">
         <div class="window">
           <div class="window-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
           <div class="code">
-            <div><span class="k">const</span> developer = {</div>
+            <div><span class="k">const</span> engineer = {</div>
             <div>&nbsp;&nbsp;name: <span class="s">"Lewis Price"</span>,</div>
-            <div>&nbsp;&nbsp;degree: <span class="s">"BSc Computer Science — First Class"</span>,</div>
-            <div>&nbsp;&nbsp;focus: [</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Software Engineering"</span>,</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Application Support"</span>,</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Automation"</span>,</div>
-            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Data-driven products"</span></div>
-            <div>&nbsp;&nbsp;],</div>
-            <div>&nbsp;&nbsp;status: <span class="s">"building + learning"</span></div>
+            <div>&nbsp;&nbsp;background: <span class="s">"Computer Science + IT Support"</span>,</div>
+            <div>&nbsp;&nbsp;strengths: [</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"building usable products"</span>,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"structured troubleshooting"</span>,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"working across the stack"</span>,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"learning unfamiliar systems quickly"</span></div>
+            <div>&nbsp;&nbsp;]</div>
             <div>};</div>
             <br>
-            <div class="c">// Selected work below ↓</div>
+            <div class="c">// Selected engineering work below ↓</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="section compact-section" aria-label="Recruiter summary">
+    <div class="container recruiter-strip">
+      <div><span class="strip-kicker">What I bring</span><strong>Product mindset</strong><p>I turn ideas into demonstrable software, not just isolated code exercises.</p></div>
+      <div><span class="strip-kicker">How I work</span><strong>Evidence-first troubleshooting</strong><p>I isolate faults, verify fixes and escalate with useful technical context.</p></div>
+      <div><span class="strip-kicker">Where I add value</span><strong>Technical breadth</strong><p>Comfortable moving between users, systems, code, databases and interfaces.</p></div>
+    </div>
+  </section>
+
   <section class="section" id="projects">
     <div class="container">
       <div class="section-header">
-        <div><div class="eyebrow">Selected work</div><h2>Projects with depth.</h2></div>
-        <p>Each case study focuses on the problem, implementation and engineering decisions — with source code available where the repository is public.</p>
+        <div><div class="eyebrow">Selected work</div><h2>Four projects that show how I engineer.</h2></div>
+        <p>These case studies focus on the problem, what I personally implemented, the technical decisions involved and what each project demonstrates to an employer.</p>
       </div>
 
       <div class="project-grid">
         <a class="project-card featured" href="projects/predictmygrade.html">
           <div class="project-visual shot-wrap">
-            <span class="preview-badge">UI concept preview</span>
-            <img class="project-shot" src="assets/predictmygrade.png" alt="PredictMyGrade dashboard concept preview">
+            <span class="preview-badge">Featured · Full stack</span>
+            <img class="project-shot" src="assets/predictmygrade.png" alt="PredictMyGrade dashboard preview">
           </div>
           <div class="project-content">
-            <div class="project-meta"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">Product Design</span><span class="tag">Playwright</span></div>
+            <div class="project-meta"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Playwright</span></div>
             <h3>PredictMyGrade</h3>
-            <p>A portfolio-grade academic analytics product mockup with progress tracking, forecasting, study planning, authentication, AI-assisted demo flows and browser-level smoke testing.</p>
+            <p>A portfolio-grade academic analytics platform combining persisted student data, dashboards, forecasting-style tools, study planning, gated features and browser-level testing.</p>
+            <div class="project-evidence"><span>Shows:</span> full-stack architecture, product thinking, testing, UX consistency</div>
             <div class="project-link">Read case study <span>→</span></div>
           </div>
         </a>
 
         <a class="project-card" href="projects/guardian.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">UI concept preview</span><img class="project-shot" src="assets/guardian.png" alt="Guardian Antivirus interface concept preview"></div>
-          <div class="project-content"><div class="project-meta"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">ClamAV</span><span class="tag">SQLite</span></div><h3>Guardian Antivirus</h3><p>A Linux desktop security application combining malware scanning, real-time file monitoring, quarantine management and a polished Qt interface.</p><div class="project-link">Read case study <span>→</span></div></div>
+          <div class="project-visual shot-wrap"><span class="preview-badge">Desktop · Security</span><img class="project-shot" src="assets/guardian.png" alt="Guardian Antivirus interface preview"></div>
+          <div class="project-content">
+            <div class="project-meta"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">ClamAV</span><span class="tag">SQLite</span></div>
+            <h3>Guardian Antivirus</h3>
+            <p>A Linux desktop security application that coordinates malware scanning, real-time file monitoring, quarantine workflows and persistent scan history through a polished Qt interface.</p>
+            <div class="project-evidence"><span>Shows:</span> OS integration, background processes, state management, defensive UX</div>
+            <div class="project-link">Read case study <span>→</span></div>
+          </div>
         </a>
 
         <a class="project-card" href="projects/student-toolkit.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">UI concept preview</span><img class="project-shot" src="assets/student-toolkit.png" alt="Student Toolkit OS mobile interface concept preview"></div>
-          <div class="project-content"><div class="project-meta"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span><span class="tag">AsyncStorage</span></div><h3>Student Toolkit OS</h3><p>A local-first mobile productivity concept connecting academics, habits, fitness, career planning and personal progress into one multi-screen experience.</p><div class="project-link">Read case study <span>→</span></div></div>
+          <div class="project-visual shot-wrap"><span class="preview-badge">Mobile · Local first</span><img class="project-shot" src="assets/student-toolkit.png" alt="Student Toolkit OS mobile interface preview"></div>
+          <div class="project-content">
+            <div class="project-meta"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span><span class="tag">AsyncStorage</span></div>
+            <h3>Student Toolkit OS</h3>
+            <p>A local-first mobile productivity app connecting academic planning, habits, fitness, career progress and personal goals through shared state and on-device persistence.</p>
+            <div class="project-evidence"><span>Shows:</span> mobile UX, local persistence, shared state, multi-feature product design</div>
+            <div class="project-link">Read case study <span>→</span></div>
+          </div>
         </a>
 
         <a class="project-card" href="projects/dissertation.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">UI concept preview</span><img class="project-shot" src="assets/dissertation.png" alt="Academic Performance Calculator interface concept preview"></div>
-          <div class="project-content"><div class="project-meta"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">UCanAccess</span><span class="tag">Data Visualisation</span></div><h3>Academic Performance Calculator</h3><p>My dissertation project: a Java desktop application for module management, weighted performance tracking, visualisation, local persistence and forecasting.</p><div class="project-link">Read case study <span>→</span></div></div>
+          <div class="project-visual shot-wrap"><span class="preview-badge">Dissertation · Java</span><img class="project-shot" src="assets/dissertation.png" alt="Academic Performance Calculator interface preview"></div>
+          <div class="project-content">
+            <div class="project-meta"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">UCanAccess</span><span class="tag">JFreeChart</span></div>
+            <h3>Academic Performance Calculator</h3>
+            <p>My final-year dissertation: a Java desktop application for module management, weighted performance tracking, visualisation, local persistence and prediction-style academic guidance.</p>
+            <div class="project-evidence"><span>Shows:</span> OOP, desktop UI, database integration, data visualisation, end-to-end delivery</div>
+            <div class="project-link">Read case study <span>→</span></div>
+          </div>
         </a>
+      </div>
 
-        <a class="project-card" href="projects/pc-part-picker.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">UI concept preview</span><img class="project-shot" src="assets/pc-part-picker.png" alt="PC Part Picker interface concept preview"></div>
-          <div class="project-content"><div class="project-meta"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">Microsoft Access</span><span class="tag">Recommendations</span></div><h3>PC Part Picker Tool</h3><p>A Java desktop system for component browsing, filtering, local recommendations, basket management, reviews and search history.</p><div class="project-link">Read case study <span>→</span></div></div>
-        </a>
+      <div class="more-work">
+        <div><span class="strip-kicker">Additional project</span><strong>PC Part Picker Tool</strong><p>Java Swing team project with Microsoft Access, component browsing, basket flows, reviews and AI-assisted prompt-to-SQL experimentation.</p></div>
+        <a class="text-link" href="projects/pc-part-picker.html">View additional case study →</a>
       </div>
     </div>
   </section>
@@ -105,32 +141,49 @@
         <div class="eyebrow">Experience</div>
         <h3>Technical support in a live business environment</h3>
         <div class="timeline">
-          <div class="timeline-item"><h3>1st Line Retail Service Desk Analyst</h3><div class="sub">Betfred · 2025 — Present</div><p>Supporting business-critical retail systems, troubleshooting incidents and service requests, escalating specialist issues and helping restore sites when technical failures affect trading.</p></div>
-          <div class="timeline-item"><h3>BSc (Hons) Computer Science</h3><div class="sub">Edge Hill University · First Class Honours</div><p>Software development, databases, data analytics, statistics, security and a final-year Java performance-prediction dissertation.</p></div>
+          <div class="timeline-item">
+            <h3>1st Line Retail Service Desk Analyst</h3>
+            <div class="sub">Betfred · 2025 — Present</div>
+            <p>Support business-critical retail systems, investigate incidents and service requests, remotely troubleshoot shop technology, restore service where possible and escalate specialist faults with clear technical context.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>BSc (Hons) Computer Science</h3>
+            <div class="sub">Edge Hill University · First Class Honours</div>
+            <p>Studied software development, databases, analytics, statistics, security and complex systems, culminating in a Java-based final-year dissertation.</p>
+          </div>
         </div>
       </div>
+
       <div class="info-card" id="skills">
         <div class="eyebrow">Technical toolkit</div>
-        <h3>Built across multiple stacks</h3>
-        <p>I focus on practical engineering: understanding the problem, selecting appropriate tools, debugging carefully and shipping something that can be demonstrated.</p>
-        <div class="skill-cloud">
-          <span class="skill">Python</span><span class="skill">Django</span><span class="skill">Java</span><span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">React Native</span><span class="skill">Expo</span><span class="skill">SQL</span><span class="skill">SQLite</span><span class="skill">Microsoft Access</span><span class="skill">Git / GitHub</span><span class="skill">Linux</span><span class="skill">PySide6 / Qt</span><span class="skill">Playwright</span><span class="skill">Technical Support</span><span class="skill">Troubleshooting</span>
-        </div>
+        <h3>Practical skills across software and support</h3>
+        <p>I’m strongest when I can combine engineering with troubleshooting: understanding a system, tracing a problem, improving the user experience and verifying that the result works.</p>
+        <div class="skill-group"><strong>Software</strong><div class="skill-cloud"><span class="skill">Python</span><span class="skill">Django</span><span class="skill">Java</span><span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">React Native</span><span class="skill">Expo</span><span class="skill">PySide6 / Qt</span></div></div>
+        <div class="skill-group"><strong>Data & tooling</strong><div class="skill-cloud"><span class="skill">SQL</span><span class="skill">SQLite</span><span class="skill">Microsoft Access</span><span class="skill">Git / GitHub</span><span class="skill">Playwright</span><span class="skill">Linux</span></div></div>
+        <div class="skill-group"><strong>Support</strong><div class="skill-cloud"><span class="skill">Incident troubleshooting</span><span class="skill">Remote support</span><span class="skill">Technical escalation</span><span class="skill">User communication</span></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="contact">
     <div class="container cta">
-      <div class="eyebrow">More technical detail</div>
-      <h2>The code is there when you want it.</h2>
-      <p>This portfolio explains the work first. GitHub is the supporting evidence for implementation, structure and source code.</p>
-      <a class="btn primary" href="https://github.com/PriceyLewis" target="_blank" rel="noreferrer">Open GitHub profile ↗</a>
+      <div class="eyebrow">For recruiters and hiring managers</div>
+      <h2>Looking for someone who can build and troubleshoot?</h2>
+      <p>I’m interested in opportunities where I can grow further in software engineering, application support, cloud/platform work or technical operations while contributing from day one with practical support and development experience.</p>
+      <div class="cta-actions">
+        <a class="btn primary" href="mailto:lplooking135@outlook.com">Email me</a>
+        <a class="btn secondary" href="https://github.com/PriceyLewis" target="_blank" rel="noreferrer">View GitHub ↗</a>
+      </div>
     </div>
   </section>
 </main>
 
-<footer><div class="container footer-inner"><span>© <span data-year></span> Lewis Price</span><span>Built as a static GitHub Pages portfolio.</span></div></footer>
+<footer>
+  <div class="container footer-inner">
+    <span>© <span data-year></span> Lewis Price</span>
+    <span>Built as a focused, recruiter-facing technical portfolio.</span>
+  </div>
+</footer>
 <script src="script.js"></script>
 </body>
 </html>
