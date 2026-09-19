@@ -160,6 +160,17 @@ footer { padding: 36px 0 48px; color: #7f8999; font-size: .9rem; }
 .shot-caption { padding: 14px 18px 18px; color: var(--muted); font-size: .92rem; border-top: 1px solid var(--line); }
 .preview-badge { position: absolute; z-index: 2; top: 28px; right: 28px; padding: 6px 10px; border-radius: 999px; background: rgba(8,12,18,.82); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); color: #dce4ef; font-size: .72rem; font-weight: 750; letter-spacing: .02em; }
 
+
+.proof-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 22px; }
+.proof-card { border: 1px solid var(--line); border-radius: 16px; padding: 18px; background: rgba(255,255,255,.025); }
+.proof-card > span { display: block; color: var(--accent-2); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .76rem; font-weight: 800; margin-bottom: 8px; }
+.proof-card strong { display: block; color: #eef3f9; letter-spacing: -.02em; }
+.proof-card p { margin: 7px 0 0; font-size: .9rem; line-height: 1.55; }
+.verification-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 20px 0; }
+.verification-grid > div { border: 1px solid var(--line); border-radius: 14px; padding: 15px; background: #0c1016; }
+.verification-grid strong { display: block; color: var(--accent-2); font-size: .9rem; }
+.verification-grid span { display: block; color: var(--muted); font-size: .78rem; margin-top: 4px; line-height: 1.4; }
+
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-panel { max-width: 720px; }
@@ -180,6 +191,7 @@ footer { padding: 36px 0 48px; color: #7f8999; font-size: .9rem; }
 
 @media (max-width: 680px) {
   .project-card { grid-column: span 12; }
+  .proof-grid, .verification-grid { grid-template-columns: 1fr; }
   .hero-proof { grid-template-columns: 1fr; }
   .hero-proof div { display: grid; grid-template-columns: minmax(110px,.5fr) 1fr; gap: 12px; align-items: baseline; }
   .more-work { align-items: flex-start; flex-direction: column; }

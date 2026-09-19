@@ -1,23 +1,166 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Student Toolkit OS case study by Lewis Price — a local-first React Native and Expo productivity application with TypeScript and CI quality checks."><title>Student Toolkit OS | Lewis Price</title><link rel="stylesheet" href="../styles.css"></head><body>
-<header class="site-header"><div class="container nav"><a class="brand" href="../index.html">Lewis<span>.</span>Price</a><nav class="nav-links"><a href="../index.html#projects">Projects</a><a href="../index.html#experience">Experience</a><a class="nav-cta" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo" target="_blank" rel="noreferrer">Source ↗</a></nav></div></header>
-<main><section class="case-hero"><div class="container"><a class="breadcrumb" href="../index.html#projects">← Back to selected projects</a><div class="eyebrow">Mobile application · Local-first product design</div><h1>Student Toolkit OS</h1><p class="lede">A React Native / Expo productivity application connecting academic planning, habits, fitness, career progress and personal goals through shared state, on-device persistence and a consistent multi-screen mobile experience.</p></div></section>
-<section class="section" style="padding-top:20px"><div class="container case-grid"><div class="case-main">
-<div class="case-card case-shot"><img class="case-shot-image" src="../assets/student-toolkit.svg" alt="Student Toolkit OS mobile interface preview"><div class="shot-caption">Representative Student Toolkit OS mobile interface preview</div></div>
-<div class="case-card"><h2>The challenge</h2><p>Students often use separate apps for revision, habits, fitness, CV planning and personal goals. I wanted to explore whether those workflows could feel like one coherent product while remaining local-first and useful without a backend account.</p><p class="callout">The main challenge was shared state and product cohesion: multiple feature areas needed to feel connected without turning the codebase or navigation into a collection of isolated mini-apps.</p></div>
-<div class="case-card"><h2>What I built</h2><ul><li>Onboarding and local profile setup.</li><li>A dashboard summarising academic, fitness, hustle and career progress.</li><li>Revision, gym, side-income and CV planning workflows.</li><li>Habit completion history, weighting and streak logic.</li><li>Weekly review and analytics views.</li><li>AsyncStorage persistence across app restarts.</li><li>Local backup, restore, export and notification flows.</li></ul></div>
-<div class="case-card"><h2>Engineering decisions</h2><ul><li><strong>Local-first by design:</strong> core functionality does not depend on a hosted backend or user account.</li><li><strong>Shared application state:</strong> related screens consume the same persisted data rather than duplicating state per feature.</li><li><strong>Feature consistency:</strong> planners and analytics follow common interaction patterns so the app feels like one product.</li><li><strong>Recoverability:</strong> restore input is validated before replacing local data, and failed restores use rollback protection so bad backup files do not silently wipe the existing app state.</li></ul></div>
-<div class="case-card"><h2>Verification</h2><p>The public demo repository runs ESLint and TypeScript type checking through GitHub Actions on pushes and pull requests. That provides a repeatable quality gate for the current portfolio build, while the documentation is explicit that full mobile end-to-end automation remains a future upgrade.</p></div>
-<div class="case-card"><h2>Architecture</h2><div class="architecture">Expo Router screens
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Student Toolkit OS case study by Lewis Price — an interactive local-first React Native and Expo portfolio product with adaptive planning, analytics, recoverable persistence and automated verification.">
+  <meta name="theme-color" content="#0a0d12">
+  <meta property="og:title" content="Student Toolkit OS | Lewis Price">
+  <meta property="og:description" content="Interactive mobile portfolio product with a Today command centre, adaptive revision planning, local persistence, rollback-safe restore and automated tests.">
+  <title>Student Toolkit OS | Lewis Price</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html">Lewis<span>.</span>Price</a>
+    <nav class="nav-links" aria-label="Project navigation">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a class="nav-cta" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo" target="_blank" rel="noreferrer">Source ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="case-hero">
+    <div class="container">
+      <a class="breadcrumb" href="../index.html#projects">← Back to selected projects</a>
+      <div class="eyebrow">Mobile application · Interactive portfolio product</div>
+      <h1>Student Toolkit OS</h1>
+      <p class="lede">A React Native / Expo productivity system that turns academics, habits, fitness, project work and career development into one coherent weekly workflow — with an instant recruiter demo, adaptive planning logic and recoverable local state.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo" target="_blank" rel="noreferrer">View source & demo instructions ↗</a>
+        <a class="btn secondary" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo/pull/1" target="_blank" rel="noreferrer">Inspect upgrade PR ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container case-grid">
+      <div class="case-main">
+        <div class="case-card case-shot">
+          <img class="case-shot-image" src="../assets/student-toolkit.svg" alt="Student Toolkit OS preview showing the Today command centre, adaptive revision planning and engineering verification">
+          <div class="shot-caption">Updated portfolio preview: ranked daily priorities, adaptive planning and a verified local-first architecture.</div>
+        </div>
+
+        <div class="case-card">
+          <div class="eyebrow">Latest portfolio upgrade</div>
+          <h2>Designed to be understandable in the first minute</h2>
+          <p>The project now opens with an <strong>Interactive Portfolio Demo</strong> that seeds realistic goals, deadlines, habit history, analytics and revision data. A recruiter can explore the finished experience immediately instead of spending time setting the app up.</p>
+          <div class="proof-grid">
+            <div class="proof-card"><span>01</span><strong>Today command centre</strong><p>Ranks the next three useful actions from current habit progress and lower-scoring performance areas.</p></div>
+            <div class="proof-card"><span>02</span><strong>Adaptive revision scheduler</strong><p>Weights study time using exam runway, available days, intensity and confidence by subject.</p></div>
+            <div class="proof-card"><span>03</span><strong>Calendar-aware analytics</strong><p>Uses real local date windows so stale or duplicate records cannot inflate consistency.</p></div>
+            <div class="proof-card"><span>04</span><strong>Recoverable demo data</strong><p>Snapshots an existing local workspace, isolates sample data and restores the previous state when demo mode ends.</p></div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <h2>The challenge</h2>
+          <p>Students often split revision, habits, fitness, career development and personal goals across separate tools. I wanted to explore whether those workflows could feel like one product while staying useful without an account, hosted database or permanent internet connection.</p>
+          <p class="callout">The engineering challenge was not just adding screens. It was keeping a broad feature set coherent, persisted, recoverable and demonstrable while avoiding hidden backend dependencies.</p>
+        </div>
+
+        <div class="case-card">
+          <h2>What I built</h2>
+          <ul>
+            <li><strong>Interactive demo mode</strong> with realistic relative-date sample data and restoreable pre-demo state.</li>
+            <li><strong>Today command centre</strong> with three ranked priorities, habit status, nearest deadline and quick actions.</li>
+            <li><strong>Adaptive revision planning</strong> using deadline urgency, weekly hours, available days, intensity and per-subject confidence.</li>
+            <li>Academic, fitness, projects/income and professional-development scorecards with targets and deadlines.</li>
+            <li>Habit completion history, weighted difficulty, streaks and weekly reset behaviour.</li>
+            <li>Weekly review, focus-session tracking and calendar-based analytics.</li>
+            <li>Local notifications, PDF plan export and JSON backup/restore.</li>
+            <li>Clean, dark and midnight dashboard themes.</li>
+          </ul>
+        </div>
+
+        <div class="case-card">
+          <h2>Engineering decisions</h2>
+          <ul>
+            <li><strong>Local-first by design:</strong> core product flows use React Context and AsyncStorage instead of requiring a production account or remote personal-data service.</li>
+            <li><strong>Deterministic domain logic:</strong> revision planning, habit logic, date metrics and restore transactions are isolated from React Native APIs so they can be tested directly.</li>
+            <li><strong>Safer persistence:</strong> habit writes update a synchronous latest-value reference before React state and storage, avoiding stale snapshots during rapid interactions.</li>
+            <li><strong>Transactional restore:</strong> backup imports accept recognised keys only, validate JSON-looking values, preserve the previous state and roll it back if a storage write fails.</li>
+            <li><strong>Maintainability:</strong> the Today command centre and dashboard style system were extracted from the large dashboard route to reduce presentation logic in the main screen.</li>
+          </ul>
+        </div>
+
+        <div class="case-card">
+          <h2>Verification</h2>
+          <p>The public portfolio repository now has a repeatable CI gate rather than relying on manual confidence alone.</p>
+          <div class="verification-grid">
+            <div><strong>ESLint</strong><span>Source-quality checks</span></div>
+            <div><strong>TypeScript</strong><span>Strict type validation</span></div>
+            <div><strong>Node tests</strong><span>Planner, dates, habits and restore rollback</span></div>
+            <div><strong>Expo export</strong><span>Real web bundle verification</span></div>
+          </div>
+          <p class="callout">The portfolio-upgrade pull request passed lint, TypeScript, the regression suite and an Expo web export before being merged into the public demo repository.</p>
+        </div>
+
+        <div class="case-card">
+          <h2>Architecture</h2>
+          <div class="architecture">Expo Router screens
       ↓
-React Context / shared state
+React Context providers
       ↓
-Feature modules + utilities
+Pure domain logic
+revisionPlanner · dateMetrics · habitLogic · backupCore
       ↓
 AsyncStorage persistence
       ↓
-Notifications + validated backup / restore
+Demo isolation · notifications · PDF / JSON export
       ↓
-ESLint + TypeScript CI</div></div>
-<div class="case-card"><h2>What this demonstrates</h2><p>This project demonstrates mobile product thinking, navigation across a broad feature set, local persistence, recoverability and the ability to design shared state around a real user experience rather than a single isolated screen.</p></div>
-</div><aside class="case-side"><div class="case-card"><h2>Project snapshot</h2><div class="stat-list"><div class="stat"><strong>Stack</strong><span>React Native, Expo, TypeScript</span></div><div class="stat"><strong>Persistence</strong><span>AsyncStorage</span></div><div class="stat"><strong>My role</strong><span>Solo product development</span></div><div class="stat"><strong>Verification</strong><span>ESLint + TypeScript CI</span></div><div class="stat"><strong>Focus</strong><span>Mobile UX + local-first state</span></div><div class="stat"><strong>Evidence</strong><span>Public demo repository</span></div></div></div><div class="case-actions"><a class="btn primary" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo" target="_blank" rel="noreferrer">View source code ↗</a><a class="btn secondary" href="../index.html#contact">Contact me</a></div></aside></div></section></main>
-<footer><div class="container footer-inner"><span>© <span data-year></span> Lewis Price</span><a href="../index.html">Portfolio home</a></div></footer><script src="../script.js"></script></body></html>
+ESLint · TypeScript · Node tests · Expo web export</div>
+        </div>
+
+        <div class="case-card">
+          <h2>What this demonstrates</h2>
+          <p>Student Toolkit OS now demonstrates more than cross-platform UI work. It shows how I think about product onboarding, shared state, failure handling, recoverability, test boundaries, date-sensitive analytics, maintainability and how to make a technical project easy for another engineer or recruiter to evaluate.</p>
+        </div>
+      </div>
+
+      <aside class="case-side">
+        <div class="case-card">
+          <h2>Project snapshot</h2>
+          <div class="stat-list">
+            <div class="stat"><strong>Stack</strong><span>React Native, Expo, TypeScript</span></div>
+            <div class="stat"><strong>Persistence</strong><span>AsyncStorage · local-first</span></div>
+            <div class="stat"><strong>Demo</strong><span>Isolated interactive sample workspace</span></div>
+            <div class="stat"><strong>Testing</strong><span>Node regression tests</span></div>
+            <div class="stat"><strong>CI</strong><span>Lint · types · tests · Expo export</span></div>
+            <div class="stat"><strong>My role</strong><span>Solo product development</span></div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <h2>Regression coverage</h2>
+          <ul class="clean-list">
+            <li>Confidence-weighted revision allocation</li>
+            <li>Exam-date parsing and deadlines</li>
+            <li>Calendar-window analytics</li>
+            <li>Habit persistence and streak logic</li>
+            <li>Backup validation and rollback</li>
+          </ul>
+        </div>
+
+        <div class="case-actions">
+          <a class="btn primary" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo" target="_blank" rel="noreferrer">View source code ↗</a>
+          <a class="btn secondary" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo/blob/main/docs/demo-script.md" target="_blank" rel="noreferrer">Recruiter demo script ↗</a>
+          <a class="btn secondary" href="../index.html#contact">Contact me</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span data-year></span> Lewis Price</span>
+    <a href="../index.html#projects">More projects →</a>
+  </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

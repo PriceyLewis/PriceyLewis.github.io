@@ -1,12 +1,91 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-<title id="title">Student Toolkit OS mobile interface preview</title><desc id="desc">Stylised portfolio preview of a student productivity mobile dashboard with habits, academics, fitness and career progress.</desc>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172036"/><stop offset="1" stop-color="#0b101a"/></linearGradient><linearGradient id="phone" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#111a29"/><stop offset="1" stop-color="#0c121d"/></linearGradient></defs>
-<rect width="1200" height="720" rx="36" fill="url(#bg)"/><circle cx="196" cy="120" r="150" fill="#7c9cff" opacity=".08"/><circle cx="1030" cy="610" r="180" fill="#52dfc8" opacity=".07"/>
-<text x="86" y="118" font-family="system-ui,sans-serif" font-size="52" font-weight="850" fill="#f5f7fb">Student Toolkit OS</text><text x="88" y="158" font-family="system-ui,sans-serif" font-size="21" fill="#a5b0c2">One local-first workspace for student life.</text>
-<g font-family="system-ui,sans-serif"><rect x="86" y="224" width="290" height="92" rx="20" fill="#151e2c" stroke="#2a3850"/><text x="112" y="260" font-size="15" fill="#8b98ab">ACADEMIC</text><text x="112" y="296" font-size="27" font-weight="750" fill="#f1f5f9">82% weekly score</text><rect x="86" y="336" width="290" height="92" rx="20" fill="#151e2c" stroke="#2a3850"/><text x="112" y="372" font-size="15" fill="#8b98ab">HABITS</text><text x="112" y="408" font-size="27" font-weight="750" fill="#f1f5f9">6 day streak</text><rect x="86" y="448" width="290" height="92" rx="20" fill="#151e2c" stroke="#2a3850"/><text x="112" y="484" font-size="15" fill="#8b98ab">CAREER</text><text x="112" y="520" font-size="27" font-weight="750" fill="#f1f5f9">3 goals active</text></g>
-<rect x="467" y="56" width="394" height="610" rx="48" fill="#05080d" stroke="#344259" stroke-width="5"/><rect x="486" y="78" width="356" height="566" rx="35" fill="url(#phone)"/><rect x="610" y="91" width="108" height="20" rx="10" fill="#05080d"/><text x="518" y="154" font-family="system-ui,sans-serif" font-size="16" fill="#8b98ab">Good afternoon, Lewis</text><text x="518" y="192" font-family="system-ui,sans-serif" font-size="30" font-weight="800" fill="#f5f7fb">Your week</text>
-<rect x="518" y="220" width="292" height="100" rx="20" fill="#1a2636"/><text x="542" y="253" font-family="system-ui,sans-serif" font-size="14" fill="#8e9caf">OVERALL MOMENTUM</text><text x="542" y="294" font-family="system-ui,sans-serif" font-size="33" font-weight="850" fill="#52dfc8">78</text><rect x="607" y="277" width="171" height="10" rx="5" fill="#2b394b"/><rect x="607" y="277" width="133" height="10" rx="5" fill="#52dfc8"/>
-<g font-family="system-ui,sans-serif"><rect x="518" y="342" width="136" height="118" rx="18" fill="#182333"/><text x="538" y="375" font-size="14" fill="#8f9caf">Revision</text><text x="538" y="418" font-size="30" font-weight="800" fill="#f4f7fb">4h 20m</text><text x="538" y="444" font-size="13" fill="#7c9cff">+40m this week</text><rect x="674" y="342" width="136" height="118" rx="18" fill="#182333"/><text x="694" y="375" font-size="14" fill="#8f9caf">Habits</text><text x="694" y="418" font-size="30" font-weight="800" fill="#f4f7fb">84%</text><text x="694" y="444" font-size="13" fill="#52dfc8">12 completed</text></g>
-<rect x="518" y="480" width="292" height="112" rx="18" fill="#182333"/><text x="540" y="514" font-family="system-ui,sans-serif" font-size="14" fill="#8f9caf">NEXT ACTION</text><text x="540" y="548" font-family="system-ui,sans-serif" font-size="19" font-weight="700" fill="#f3f6fa">Finish database revision block</text><text x="540" y="574" font-family="system-ui,sans-serif" font-size="14" fill="#9ba8b8">25 minutes · today</text>
-<g font-family="system-ui,sans-serif"><rect x="920" y="202" width="208" height="66" rx="16" fill="#141f2d" stroke="#2a3850"/><circle cx="951" cy="235" r="9" fill="#52dfc8"/><text x="975" y="241" font-size="17" fill="#eef2f6">Local persistence</text><rect x="920" y="290" width="208" height="66" rx="16" fill="#141f2d" stroke="#2a3850"/><circle cx="951" cy="323" r="9" fill="#7c9cff"/><text x="975" y="329" font-size="17" fill="#eef2f6">Backup &amp; restore</text><rect x="920" y="378" width="208" height="66" rx="16" fill="#141f2d" stroke="#2a3850"/><circle cx="951" cy="411" r="9" fill="#52dfc8"/><text x="975" y="417" font-size="17" fill="#eef2f6">Weekly analytics</text><rect x="920" y="466" width="208" height="66" rx="16" fill="#141f2d" stroke="#2a3850"/><circle cx="951" cy="499" r="9" fill="#7c9cff"/><text x="975" y="505" font-size="17" fill="#eef2f6">Notifications</text></g>
+<title id="title">Student Toolkit OS interactive portfolio preview</title>
+<desc id="desc">Stylised product preview showing a mobile Today command centre, adaptive revision planner and automated engineering checks.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#172036"/><stop offset="1" stop-color="#0b101a"/></linearGradient>
+  <linearGradient id="phone" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#111a29"/><stop offset="1" stop-color="#0c121d"/></linearGradient>
+</defs>
+<rect width="1200" height="720" rx="36" fill="url(#bg)"/>
+<circle cx="160" cy="100" r="155" fill="#7c9cff" opacity=".08"/>
+<circle cx="1060" cy="610" r="190" fill="#52dfc8" opacity=".07"/>
+
+<g font-family="system-ui,sans-serif">
+  <text x="76" y="92" font-size="48" font-weight="850" fill="#f5f7fb">Student Toolkit OS</text>
+  <text x="78" y="130" font-size="20" fill="#a5b0c2">Interactive demo · local-first mobile product</text>
+
+  <rect x="76" y="188" width="310" height="126" rx="20" fill="#151e2c" stroke="#2a3850"/>
+  <text x="100" y="220" font-size="13" font-weight="700" fill="#52dfc8">TODAY COMMAND CENTRE</text>
+  <text x="100" y="254" font-size="22" font-weight="800" fill="#f1f5f9">3 ranked next moves</text>
+  <text x="100" y="282" font-size="14" fill="#8b98ab">Habits · scores · nearest deadline</text>
+
+  <rect x="76" y="332" width="310" height="126" rx="20" fill="#151e2c" stroke="#2a3850"/>
+  <text x="100" y="364" font-size="13" font-weight="700" fill="#7c9cff">ADAPTIVE REVISION</text>
+  <text x="100" y="398" font-size="22" font-weight="800" fill="#f1f5f9">Confidence-aware planning</text>
+  <text x="100" y="426" font-size="14" fill="#8b98ab">Deadline · hours · availability</text>
+
+  <rect x="76" y="476" width="310" height="126" rx="20" fill="#151e2c" stroke="#2a3850"/>
+  <text x="100" y="508" font-size="13" font-weight="700" fill="#52dfc8">VERIFIED BUILD</text>
+  <text x="100" y="542" font-size="22" font-weight="800" fill="#f1f5f9">Lint · types · tests · export</text>
+  <text x="100" y="570" font-size="14" fill="#8b98ab">GitHub Actions quality gate</text>
+</g>
+
+<rect x="443" y="42" width="390" height="636" rx="48" fill="#05080d" stroke="#344259" stroke-width="5"/>
+<rect x="462" y="64" width="352" height="592" rx="35" fill="url(#phone)"/>
+<rect x="584" y="78" width="108" height="20" rx="10" fill="#05080d"/>
+
+<g font-family="system-ui,sans-serif">
+  <text x="494" y="137" font-size="13" font-weight="750" fill="#52dfc8">INTERACTIVE DEMO</text>
+  <text x="494" y="174" font-size="29" font-weight="850" fill="#f5f7fb">Your next three moves</text>
+  <text x="494" y="198" font-size="13" fill="#8b98ab">Exam preparation + graduate career</text>
+
+  <rect x="494" y="224" width="288" height="72" rx="17" fill="#1a2636"/>
+  <circle cx="520" cy="260" r="14" fill="#223b4a"/>
+  <text x="516" y="265" font-size="12" font-weight="800" fill="#52dfc8">1</text>
+  <text x="548" y="253" font-size="15" font-weight="760" fill="#f3f6fa">Finish today's habits</text>
+  <text x="548" y="276" font-size="12" fill="#8e9caf">3/4 complete · one remaining</text>
+
+  <rect x="494" y="310" width="288" height="72" rx="17" fill="#182333"/>
+  <circle cx="520" cy="346" r="14" fill="#273150"/>
+  <text x="516" y="351" font-size="12" font-weight="800" fill="#9fb4ff">2</text>
+  <text x="548" y="339" font-size="15" font-weight="760" fill="#f3f6fa">Move your build forward</text>
+  <text x="548" y="362" font-size="12" fill="#8e9caf">Projects &amp; income · 59/100</text>
+
+  <rect x="494" y="396" width="288" height="72" rx="17" fill="#182333"/>
+  <circle cx="520" cy="432" r="14" fill="#273150"/>
+  <text x="516" y="437" font-size="12" font-weight="800" fill="#9fb4ff">3</text>
+  <text x="548" y="425" font-size="15" font-weight="760" fill="#f3f6fa">Protect academic momentum</text>
+  <text x="548" y="448" font-size="12" fill="#8e9caf">Adaptive revision · 73/100</text>
+
+  <rect x="494" y="490" width="136" height="104" rx="18" fill="#182333"/>
+  <text x="514" y="520" font-size="12" fill="#8f9caf">HABITS</text>
+  <text x="514" y="558" font-size="29" font-weight="850" fill="#52dfc8">75%</text>
+  <text x="514" y="580" font-size="11" fill="#8f9caf">today</text>
+
+  <rect x="646" y="490" width="136" height="104" rx="18" fill="#182333"/>
+  <text x="666" y="520" font-size="12" fill="#8f9caf">DEADLINE</text>
+  <text x="666" y="558" font-size="29" font-weight="850" fill="#7c9cff">21d</text>
+  <text x="666" y="580" font-size="11" fill="#8f9caf">career</text>
+</g>
+
+<g font-family="system-ui,sans-serif">
+  <rect x="892" y="188" width="232" height="84" rx="17" fill="#141f2d" stroke="#2a3850"/>
+  <circle cx="924" cy="230" r="9" fill="#52dfc8"/>
+  <text x="948" y="222" font-size="15" font-weight="750" fill="#eef2f6">Demo isolation</text>
+  <text x="948" y="244" font-size="12" fill="#8f9caf">Restores prior workspace</text>
+
+  <rect x="892" y="292" width="232" height="84" rx="17" fill="#141f2d" stroke="#2a3850"/>
+  <circle cx="924" cy="334" r="9" fill="#7c9cff"/>
+  <text x="948" y="326" font-size="15" font-weight="750" fill="#eef2f6">Calendar analytics</text>
+  <text x="948" y="348" font-size="12" fill="#8f9caf">True rolling date windows</text>
+
+  <rect x="892" y="396" width="232" height="84" rx="17" fill="#141f2d" stroke="#2a3850"/>
+  <circle cx="924" cy="438" r="9" fill="#52dfc8"/>
+  <text x="948" y="430" font-size="15" font-weight="750" fill="#eef2f6">Safe restore</text>
+  <text x="948" y="452" font-size="12" fill="#8f9caf">Validation + rollback</text>
+
+  <rect x="892" y="500" width="232" height="84" rx="17" fill="#141f2d" stroke="#2a3850"/>
+  <circle cx="924" cy="542" r="9" fill="#7c9cff"/>
+  <text x="948" y="534" font-size="15" font-weight="750" fill="#eef2f6">Regression tests</text>
+  <text x="948" y="556" font-size="12" fill="#8f9caf">Planner · habits · backup</text>
+</g>
 </svg>
