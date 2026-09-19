@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install SVG renderer
         run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
       - name: Render 1200x630 PNG
@@ -29,4 +29,5 @@ jobs:
           git add assets/social-card.png
           git diff --cached --quiet && exit 0
           git commit -m "assets: refresh social preview PNG"
+          git pull --rebase origin main
           git push
