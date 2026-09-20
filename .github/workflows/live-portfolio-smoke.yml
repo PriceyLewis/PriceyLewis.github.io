@@ -60,19 +60,34 @@ jobs:
           (async () => {
             const browser = await chromium.launch();
 
-            // Portfolio and recruiter-facing links.
+            // Portfolio homepage plus case-study launch links.
             {
               const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
               const body = await gotoHealthy(page, urls.portfolio);
               assert(/Lewis Price/i.test(body), 'Portfolio identity text missing');
-              for (const href of [
-                'https://priceylewis.github.io/Guardian-AntiVirus/',
-                'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/',
-                'https://priceylewis.github.io/PCPartPickerTool-Demo/',
+              for (const path of [
+                'projects/predictmygrade.html',
+                'projects/student-toolkit.html',
+                'projects/dissertation.html',
+                'projects/guardian.html',
+                'projects/pc-part-picker.html',
               ]) {
+                assert(await page.locator(`a[href="${path}"]`).count() > 0,
+                  'Portfolio homepage is missing case study ' + path);
+              }
+
+              const cases = [
+                ['projects/predictmygrade.html', 'https://predictmygrade-demo.onrender.com/'],
+                ['projects/student-toolkit.html', 'https://priceylewis.github.io/StudentToolKit-OS-Demo/'],
+                ['projects/dissertation.html', 'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/'],
+                ['projects/guardian.html', 'https://priceylewis.github.io/Guardian-AntiVirus/'],
+                ['projects/pc-part-picker.html', 'https://priceylewis.github.io/PCPartPickerTool-Demo/'],
+              ];
+              for (const [path, href] of cases) {
+                await gotoHealthy(page, urls.portfolio + path);
                 assert(await page.locator(`a[href="${href}"]`).count() > 0 ||
                        await page.locator(`a[href="${href.replace(/\/$/, '')}"]`).count() > 0,
-                       'Portfolio is missing recruiter link to ' + href);
+                       path + ' is missing live demo link ' + href);
               }
               await page.close();
             }
@@ -95,13 +110,18 @@ jobs:
               await page.close();
             }
 
-            // Student Toolkit: deployed Expo static application must render, not just return HTML.
+            // Student Toolkit: enter the interactive demo and verify seeded dashboard content.
             {
               const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
               await gotoHealthy(page, urls.student);
-              await page.waitForTimeout(3000);
+              await page.getByText('Student Toolkit OS').waitFor({ timeout: 30000 });
+              const demoButton = page.getByText('Try Interactive Demo', { exact: true });
+              if (await demoButton.count()) {
+                await demoButton.click();
+              }
+              await page.getByText('Academic Performance', { exact: true }).waitFor({ timeout: 30000 });
               const text = await page.locator('body').innerText();
-              assert(/Student Toolkit|Toolkit|Academic|Dashboard/i.test(text), 'Student Toolkit app shell did not render');
+              assert(/Physical Conditioning/i.test(text), 'Student Toolkit demo data did not render');
               assert(!/unexpected application error|something went wrong/i.test(text), 'Student Toolkit rendered a runtime error');
               await page.close();
             }
