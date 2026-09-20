@@ -126,6 +126,40 @@ jobs:
               for (const path of ['/modules/','/what-if/','/settings/','/welcome/','/upgrade/']) {
                 await waitHealthy(page, 'https://predictmygrade-demo.onrender.com' + path);
                 await checkLayout(page, 'predict' + path + suffix);
+
+                if (path === '/welcome/') {
+                  const card = page.locator('.feature-card').first();
+                  await card.waitFor();
+                  const visual = await card.evaluate(element => {
+                    const heading = element.querySelector('h3');
+                    const body = element.querySelector('p');
+                    return {
+                      cardBackground: getComputedStyle(element).backgroundColor,
+                      headingColor: heading ? getComputedStyle(heading).color : '',
+                      bodyColor: body ? getComputedStyle(body).color : '',
+                      headingText: heading?.textContent?.trim() || '',
+                    };
+                  });
+                  assert(Boolean(visual.headingText), 'PredictMyGrade welcome feature heading is blank');
+                  assert(
+                    visual.headingColor !== visual.cardBackground && visual.bodyColor !== visual.cardBackground,
+                    'PredictMyGrade welcome card contrast failed: ' + JSON.stringify(visual)
+                  );
+                }
+
+                if (path === '/upgrade/') {
+                  const comparison = page.locator('.comparison-table');
+                  await comparison.waitFor({ state: 'visible', timeout: 30000 });
+                  assert(
+                    (await comparison.innerText()).includes('Advanced analytics'),
+                    'PredictMyGrade upgrade comparison table content is missing'
+                  );
+                  assert(
+                    await page.locator('#upgrade-alert').isHidden(),
+                    'PredictMyGrade inactive upgrade alert is visible'
+                  );
+                }
+
                 if (path === '/welcome/' || path === '/upgrade/') {
                   await screenshot(page, 'predict-' + path.replaceAll('/','') + '-' + suffix);
                 }
@@ -159,6 +193,12 @@ jobs:
             await screenshot(page, 'guardian-overview-' + suffix);
             await page.getByRole('button', { name: 'Add suspicious sample' }).click();
             await page.getByRole('button', { name: /Quarantine/ }).click();
+            assert(
+              await page.locator('#toast-region .toast').count() === 0,
+              'Guardian stale toast remained after navigation on ' + suffix
+            );
+            await page.getByRole('button', { name: 'Restore' }).waitFor();
+            await page.getByRole('button', { name: 'Delete' }).waitFor();
             await checkLayout(page, 'guardian-quarantine-' + suffix);
             await screenshot(page, 'guardian-quarantine-' + suffix);
             await page.getByRole('button', { name: 'Settings' }).click();
