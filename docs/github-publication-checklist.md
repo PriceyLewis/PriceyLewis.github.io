@@ -16,13 +16,11 @@ Use the exact descriptions, homepages and topics in `PriceyLewis.github.io/docs/
 
 For each repository, open the repository → **About** → gear icon → update Description, Website and Topics.
 
-## 3. Rename the dissertation repository
+## 3. Dissertation repository rename — complete
 
-Recommended new name: `Academic-Performance-Calculator`
+The dissertation repository has been renamed to `Academic-Performance-Calculator`.
 
-Current name: `Academic-Performance-Calculator-Dissertation-`
-
-After renaming, update the dissertation links in the portfolio and profile README to the new repository and GitHub Pages URL. GitHub normally redirects old repository URLs, but the public portfolio should still use the clean canonical name.
+The portfolio, profile README draft, browser-demo links and automated recruiter-journey checks have been updated to use the new canonical repository and GitHub Pages URL.
 
 ## 4. Create v1.0.0 GitHub releases
 
