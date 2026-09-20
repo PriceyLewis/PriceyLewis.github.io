@@ -26,7 +26,7 @@ Linux desktop security application coordinating ClamAV scanning, filesystem moni
 **Stack:** Python · PySide6 · ClamAV · SQLite · pytest  
 **Verification:** automated native regression tests plus a safe interactive browser simulation.
 
-### 🎓 [Academic Performance Calculator](https://github.com/PriceyLewis/Academic-Performance-Calculator-Dissertation-)
+### 🎓 [Academic Performance Calculator](https://github.com/PriceyLewis/Academic-Performance-Calculator)
 Modernised Java Swing dissertation application with Microsoft Access persistence, visualisation and an inspectable educational random-forest classifier.
 
 **Stack:** Java 17 · Swing · Maven · JUnit · UCanAccess  
