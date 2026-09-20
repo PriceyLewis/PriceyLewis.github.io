@@ -39,7 +39,7 @@ jobs:
             portfolio: 'https://priceylewis.github.io/',
             predict: 'https://predictmygrade-demo.onrender.com/accounts/login/',
             student: 'https://priceylewis.github.io/StudentToolKit-OS-Demo/',
-            academic: 'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/',
+            academic: 'https://priceylewis.github.io/Academic-Performance-Calculator/',
             pc: 'https://priceylewis.github.io/PCPartPickerTool-Demo/',
             guardian: 'https://priceylewis.github.io/Guardian-AntiVirus/',
           };
@@ -79,7 +79,7 @@ jobs:
               const cases = [
                 ['projects/predictmygrade.html', 'https://predictmygrade-demo.onrender.com/'],
                 ['projects/student-toolkit.html', 'https://priceylewis.github.io/StudentToolKit-OS-Demo/'],
-                ['projects/dissertation.html', 'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/'],
+                ['projects/dissertation.html', 'https://priceylewis.github.io/Academic-Performance-Calculator/'],
                 ['projects/guardian.html', 'https://priceylewis.github.io/Guardian-AntiVirus/'],
                 ['projects/pc-part-picker.html', 'https://priceylewis.github.io/PCPartPickerTool-Demo/'],
               ];
