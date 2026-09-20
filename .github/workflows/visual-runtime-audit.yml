@@ -34,7 +34,7 @@ jobs:
             portfolio: 'https://priceylewis.github.io/',
             predict: 'https://predictmygrade-demo.onrender.com/accounts/login/',
             student: 'https://priceylewis.github.io/StudentToolKit-OS-Demo/',
-            academic: 'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/',
+            academic: 'https://priceylewis.github.io/Academic-Performance-Calculator/',
             pc: 'https://priceylewis.github.io/PCPartPickerTool-Demo/',
             guardian: 'https://priceylewis.github.io/Guardian-AntiVirus/',
           };
