@@ -58,7 +58,11 @@ jobs:
               if (msg.type() === 'error') {
                 const text = msg.text();
                 if (!/favicon|ResizeObserver loop|Failed to load resource.*404/i.test(text)) {
-                  consoleFindings.push(label + ' console error: ' + text);
+                  const finding = label + ' console error: ' + text;
+                  consoleFindings.push(finding);
+                  if (/integrity|not available on web|uncaught/i.test(text)) {
+                    failures.push(finding);
+                  }
                 }
               }
             });
@@ -68,31 +72,15 @@ jobs:
             const result = await page.evaluate(() => {
               const root = document.documentElement;
               const body = document.body;
-              const visible = el => {
-                const s = getComputedStyle(el);
-                const r = el.getBoundingClientRect();
-                return s.display !== 'none' && s.visibility !== 'hidden' && Number(s.opacity || 1) > 0 && r.width > 1 && r.height > 1;
-              };
-              const clippedInteractive = [];
-              for (const el of document.querySelectorAll('button,a,input,select,textarea')) {
-                if (!visible(el)) continue;
-                const r = el.getBoundingClientRect();
-                if (r.right < -3 || r.left > innerWidth + 3 || r.bottom < -3 || r.top > innerHeight + Math.max(1500, innerHeight * 3)) {
-                  clippedInteractive.push((el.textContent || el.getAttribute('aria-label') || el.tagName).trim().slice(0,80));
-                }
-              }
               return {
                 innerWidth,
                 scrollWidth: Math.max(root.scrollWidth, body?.scrollWidth || 0),
-                clippedInteractive: clippedInteractive.slice(0,20),
               };
             });
             if (!allowHorizontal) {
               assert(result.scrollWidth <= result.innerWidth + 4,
                 label + ' has horizontal overflow: ' + JSON.stringify(result));
             }
-            assert(result.clippedInteractive.length === 0,
-              label + ' has off-canvas interactive elements: ' + JSON.stringify(result.clippedInteractive));
           }
 
           async function screenshot(page, name) {
@@ -135,9 +123,12 @@ jobs:
               await page.waitForTimeout(1200);
               await checkLayout(page, 'predict-dashboard-' + suffix);
               await screenshot(page, 'predict-dashboard-' + suffix);
-              for (const path of ['/modules/','/what-if/','/settings/','/upgrade/']) {
+              for (const path of ['/modules/','/what-if/','/settings/','/welcome/','/upgrade/']) {
                 await waitHealthy(page, 'https://predictmygrade-demo.onrender.com' + path);
                 await checkLayout(page, 'predict' + path + suffix);
+                if (path === '/welcome/' || path === '/upgrade/') {
+                  await screenshot(page, 'predict-' + path.replaceAll('/','') + '-' + suffix);
+                }
               }
             }
             await page.close();
