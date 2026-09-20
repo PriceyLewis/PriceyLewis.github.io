@@ -1,0 +1,167 @@
+name: Live portfolio smoke
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "37 8 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-portfolio-smoke
+  cancel-in-progress: true
+
+jobs:
+  live-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Exercise every public portfolio demo
+        run: |
+          node <<'NODE'
+          const { chromium } = require('playwright');
+
+          const urls = {
+            portfolio: 'https://priceylewis.github.io/',
+            predict: 'https://predictmygrade-demo.onrender.com/accounts/login/',
+            student: 'https://priceylewis.github.io/StudentToolKit-OS-Demo/',
+            academic: 'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/',
+            pc: 'https://priceylewis.github.io/PCPartPickerTool-Demo/',
+            guardian: 'https://priceylewis.github.io/Guardian-AntiVirus/',
+          };
+
+          const assert = (condition, message) => {
+            if (!condition) throw new Error(message);
+          };
+
+          async function gotoHealthy(page, url, timeout = 120000) {
+            const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
+            assert(response && response.status() < 400, url + ' returned HTTP ' + (response && response.status()));
+            const body = await page.locator('body').innerText();
+            assert(body.trim().length > 80, url + ' rendered an unexpectedly empty page');
+            assert(!/404 file not found|internal server error|application error|traceback/i.test(body), url + ' rendered an error page');
+            return body;
+          }
+
+          (async () => {
+            const browser = await chromium.launch();
+
+            // Portfolio and recruiter-facing links.
+            {
+              const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+              const body = await gotoHealthy(page, urls.portfolio);
+              assert(/Lewis Price/i.test(body), 'Portfolio identity text missing');
+              for (const href of [
+                'https://priceylewis.github.io/Guardian-AntiVirus/',
+                'https://priceylewis.github.io/Academic-Performance-Calculator-Dissertation-/',
+                'https://priceylewis.github.io/PCPartPickerTool-Demo/',
+              ]) {
+                assert(await page.locator(`a[href="${href}"]`).count() > 0 ||
+                       await page.locator(`a[href="${href.replace(/\/$/, '')}"]`).count() > 0,
+                       'Portfolio is missing recruiter link to ' + href);
+              }
+              await page.close();
+            }
+
+            // PredictMyGrade: Render cold starts are allowed, then the live login must become usable.
+            {
+              const page = await browser.newPage();
+              let ready = false;
+              for (let attempt = 0; attempt < 18 && !ready; attempt++) {
+                try {
+                  const body = await gotoHealthy(page, urls.predict, 120000);
+                  ready = /Continue as Demo User/i.test(body);
+                } catch (error) {
+                  if (attempt === 17) throw error;
+                }
+                if (!ready) await page.waitForTimeout(10000);
+              }
+              assert(ready, 'PredictMyGrade live demo never exposed the demo login');
+              await page.getByRole('button', { name: 'Continue as Demo User' }).waitFor();
+              await page.close();
+            }
+
+            // Student Toolkit: deployed Expo static application must render, not just return HTML.
+            {
+              const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+              await gotoHealthy(page, urls.student);
+              await page.waitForTimeout(3000);
+              const text = await page.locator('body').innerText();
+              assert(/Student Toolkit|Toolkit|Academic|Dashboard/i.test(text), 'Student Toolkit app shell did not render');
+              assert(!/unexpected application error|something went wrong/i.test(text), 'Student Toolkit rendered a runtime error');
+              await page.close();
+            }
+
+            // Academic Performance Calculator: verify the deployed CheerpJ build reaches Java readiness.
+            {
+              const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+              await gotoHealthy(page, urls.academic);
+              await page.waitForFunction(
+                () => window.__academicDemoJavaReady || window.__academicDemoError,
+                null,
+                { timeout: 180000 }
+              );
+              const state = await page.evaluate(() => ({
+                ready: Boolean(window.__academicDemoJavaReady),
+                error: window.__academicDemoError || '',
+                display: Boolean(window.__academicDemoDisplayCreated),
+                status: document.getElementById('status')?.textContent || '',
+              }));
+              assert(!state.error && state.ready && state.display, 'Academic browser app failed: ' + JSON.stringify(state));
+              await page.close();
+            }
+
+            // PC Part Picker: verify public deployment reaches the Swing home screen.
+            {
+              const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+              await gotoHealthy(page, urls.pc);
+              await page.waitForFunction(
+                () => window.__pcPartDemoJavaReady || window.__pcPartDemoError,
+                null,
+                { timeout: 180000 }
+              );
+              const state = await page.evaluate(() => ({
+                ready: Boolean(window.__pcPartDemoJavaReady),
+                error: window.__pcPartDemoError || '',
+                display: Boolean(window.__pcPartDemoDisplayCreated),
+                stage: window.__pcPartDemoStage || '',
+              }));
+              assert(!state.error && state.ready && state.display && state.stage === 'home',
+                'PC Part Picker browser app failed: ' + JSON.stringify(state));
+              await page.close();
+            }
+
+            // Guardian: verify the deployed interactive simulation actually changes state.
+            {
+              const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+              await gotoHealthy(page, urls.guardian);
+              await page.waitForFunction(() => Boolean(window.__guardianDemo), null, { timeout: 30000 });
+              const before = await page.evaluate(() => window.__guardianDemo.getState());
+              await page.getByRole('button', { name: 'Add suspicious sample' }).click();
+              const after = await page.evaluate(() => window.__guardianDemo.getState());
+              assert(after.detections === before.detections + 1, 'Guardian simulated detection did not increment');
+              assert(after.quarantine === before.quarantine + 1, 'Guardian simulated quarantine did not increment');
+              await page.close();
+            }
+
+            await browser.close();
+            console.log('All public portfolio demos passed live smoke verification.');
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          NODE
