@@ -37,10 +37,7 @@ https://priceylewis.github.io/projects/guardian.html
 
 **Important:** replace the existing "open-source antivirus" wording unless you intentionally choose and add an open-source licence.
 
-## Academic-Performance-Calculator-Dissertation-
-
-**Suggested repository name**  
-`academic-performance-calculator`
+## Academic-Performance-Calculator
 
 **Description**  
 Java Swing academic analytics app with Microsoft Access, Maven, JUnit and an inspectable random-forest classifier.
