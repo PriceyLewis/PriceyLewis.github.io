@@ -2,13 +2,9 @@
 
 The code, browser demos and recruiter-facing portfolio were verified on **20 September 2026**. The remaining tasks below require GitHub account/repository settings that are not exposed by the connected GitHub API.
 
-## 1. Create the profile README
+## 1. GitHub profile README — complete
 
-Create a new **public** repository named exactly `PriceyLewis`.
-
-GitHub will display its README on the profile because the repository name matches the account name.
-
-Copy the contents of `PriceyLewis.github.io/docs/github-profile-readme.md` into that repository's `README.md`.
+The public `PriceyLewis/PriceyLewis` profile repository has been created and its `README.md` now contains the polished recruiter-facing profile content.
 
 ## 2. Update repository About panels
 
