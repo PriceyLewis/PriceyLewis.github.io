@@ -1,37 +1,51 @@
 # Hi, I'm Lewis Price 👋
 
-**First-Class BSc (Hons) Computer Science graduate · 1st Line IT Support Analyst · Software engineering portfolio**
+**First-Class BSc (Hons) Computer Science graduate · 1st Line Retail Service Desk Analyst · Software engineering portfolio**
 
-I build practical software and troubleshoot live systems. My public work spans full-stack Django, React Native / Expo, Java desktop development, Linux security tooling, databases, automated testing and CI.
+I build practical software and troubleshoot live, business-critical systems. My public portfolio spans full-stack Django, React Native / Expo, Java desktop development, Linux security tooling, databases, automated browser testing and CI/CD.
 
 [🌐 Portfolio](https://priceylewis.github.io/) · [💼 LinkedIn](https://www.linkedin.com/in/lewis-price-profile/) · [📄 CV](https://priceylewis.github.io/assets/Lewis-Price-CV.pdf)
 
-## Featured projects
+## Featured engineering work
 
 ### 🚀 [PredictMyGrade](https://github.com/PriceyLewis/PredictMyGrade-Demo)
-Portfolio-grade Django product demo for academic analytics, forecasting-style tools, study planning and demo-safe Free/Premium journeys.
+Full-stack Django portfolio product for academic analytics, forecasting-style tools, planning and demo-safe Free/Premium journeys.
 
-**Evidence:** Django tests · Playwright browser journeys · GitHub Actions · persistence · mock billing · deterministic local AI-style demo behaviour.
+**Stack:** Python · Django · SQLite · Playwright · GitHub Actions  
+**Verification:** backend regression tests, desktop/mobile E2E journeys and live-deployment smoke tests.
 
 ### 📱 [Student Toolkit OS](https://github.com/PriceyLewis/StudentToolKit-OS-Demo)
-Local-first React Native / Expo productivity product combining academics, habits, revision planning, analytics, fitness and career progress.
+Local-first React Native / Expo productivity system combining academics, habits, revision planning, analytics, fitness and career progress.
 
-**Evidence:** TypeScript · adaptive scheduling · transactional backup/restore · regression tests · lint/type checks · verified Expo web export.
+**Stack:** React Native · Expo · TypeScript · AsyncStorage  
+**Verification:** lint, type checks, regression tests, Expo web build and desktop/mobile browser journeys.
 
 ### 🛡️ [Guardian Antivirus](https://github.com/PriceyLewis/Guardian-AntiVirus)
 Linux desktop security application coordinating ClamAV scanning, filesystem monitoring, quarantine, history and defensive settings behaviour.
 
-**Evidence:** Python · PySide6 · ClamAV · SQLite · pytest · Linux integration.
+**Stack:** Python · PySide6 · ClamAV · SQLite · pytest  
+**Verification:** automated native regression tests plus a safe interactive browser simulation.
 
 ### 🎓 [Academic Performance Calculator](https://github.com/PriceyLewis/Academic-Performance-Calculator-Dissertation-)
-Modernised Java Swing dissertation application with Microsoft Access persistence, data visualisation and an inspectable random-forest classifier.
+Modernised Java Swing dissertation application with Microsoft Access persistence, visualisation and an inspectable educational random-forest classifier.
 
-**Evidence:** Java 17 · Maven · JUnit · 101-tree ensemble · GitHub Actions · runnable packaged JAR.
+**Stack:** Java 17 · Swing · Maven · JUnit · UCanAccess  
+**Verification:** Maven/JUnit CI and an automated browser launch of the actual Swing application through CheerpJ.
 
-## Technologies
+### 🖥️ [PC Part Picker](https://github.com/PriceyLewis/PCPartPickerTool-Demo)
+Java Swing coursework project modernised into a recruiter-friendly PC component browser with basket, reviews and deterministic recommendation features.
 
-`Python` `Django` `Java` `TypeScript` `React Native` `Expo` `SQL` `SQLite` `Microsoft Access` `Linux` `GitHub Actions` `Playwright` `pytest` `JUnit`
+**Stack:** Java 17 · Swing · Maven · Microsoft Access  
+**Verification:** Java CI, browser automation and live CheerpJ deployment checks.
 
-## Current focus
+## Technical toolkit
 
-I’m looking to keep growing across software engineering, application support, cloud/platform and technical operations — roles where development skill and practical troubleshooting both matter.
+`Python` `Django` `Java` `JavaScript` `TypeScript` `React Native` `Expo` `PySide6` `SQL` `SQLite` `Microsoft Access` `Linux` `GitHub Actions` `Playwright` `pytest` `JUnit`
+
+## What I'm looking for
+
+I’m interested in software engineering, application support, cloud/platform and technical operations roles where I can combine development ability with practical troubleshooting experience.
+
+## Portfolio verification
+
+The public portfolio is treated as a release rather than a collection of unfinished repositories. The live demos are covered by automated tests, and the portfolio itself runs cross-project smoke and visual-runtime checks against the recruiter journey.
