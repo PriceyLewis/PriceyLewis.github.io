@@ -25,12 +25,15 @@ The site connects my public repositories, technical case studies, CV, LinkedIn a
 
 ## Quality and presentation
 
-- responsive static site with no paid hosting requirement;
-- project-specific engineering case studies;
-- public-source links and verification evidence;
-- downloadable CV and direct LinkedIn access;
-- canonical + Open Graph + Twitter social metadata;
+- responsive static site with an accessible keyboard-friendly mobile navigation;
+- recruiter-first project cards with direct case-study, live-demo and source links;
+- project-specific engineering case studies with public verification evidence;
+- downloadable CV, direct LinkedIn access and clear role/location context;
+- Microsoft SC-900 certification surfaced alongside technical skills;
+- canonical, Open Graph, Twitter, sitemap, robots and structured-person metadata;
+- favicon + installable web-app metadata;
+- lazy-loaded project media and reduced-motion-aware interactions;
 - 1200×630 social sharing image rendered from `assets/social-card.svg`;
-- automated site checks through GitHub Actions.
+- automated static-site quality checks through GitHub Actions.
 
 The project interface images are clearly labelled representative portfolio previews where direct application screenshots are not yet available.
