@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0a0d12"/>
+      <stop offset="1" stop-color="#121a29"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1070" cy="40" r="240" fill="#7c9cff" opacity=".08"/>
+  <circle cx="1110" cy="610" r="250" fill="#52dfc8" opacity=".07"/>
+  <rect x="54" y="54" width="1092" height="522" rx="34" fill="#11161f" stroke="#2c3646" stroke-width="2"/>
+  <rect x="90" y="92" width="90" height="8" rx="4" fill="#52dfc8"/>
+  <text x="90" y="146" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="800" fill="#52dfc8" letter-spacing=".5">FINAL-YEAR DISSERTATION</text>
+  <text x="90" y="216" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="48" font-weight="800" fill="#f5f7fb">Academic Performance</text>
+  <text x="90" y="272" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="48" font-weight="800" fill="#f5f7fb">Calculator</text>
+  <text x="90" y="324" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" fill="#aab4c3">Java Swing application for academic tracking, persistence,</text>
+  <text x="90" y="356" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" fill="#aab4c3">visualisation and prediction-style guidance.</text>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="750" fill="#dfe5ef">
+    <rect x="90" y="386" width="74" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="108" y="412">Java</text>
+    <rect x="174" y="386" width="90" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="190" y="412">Swing</text>
+    <rect x="274" y="386" width="150" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="290" y="412">UCanAccess</text>
+    <rect x="434" y="386" width="78" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="450" y="412">JUnit</text>
+    <rect x="522" y="386" width="160" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="538" y="412">Browser demo</text>
+  </g>
+
+  <text x="90" y="540" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="800" fill="#7c9cff">Lewis Price · priceylewis.github.io</text>
+
+  <rect x="745" y="118" width="353" height="372" rx="24" fill="#edf1f6" stroke="#4b586c" stroke-width="2"/>
+  <rect x="765" y="140" width="313" height="44" rx="12" fill="#243248"/>
+  <text x="784" y="169" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="800" fill="#f8fafc">Academic Performance</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="782" y="218" font-size="13" font-weight="800" fill="#66768c">MODULE</text>
+    <text x="972" y="218" font-size="13" font-weight="800" fill="#66768c">GRADE</text>
+    <text x="782" y="252" font-size="16" fill="#2a3341">OOP</text><text x="990" y="252" font-size="16" font-weight="800" fill="#2a3341">72%</text>
+    <line x1="782" y1="267" x2="1058" y2="267" stroke="#d2d9e2"/>
+    <text x="782" y="298" font-size="16" fill="#2a3341">Databases</text><text x="990" y="298" font-size="16" font-weight="800" fill="#2a3341">68%</text>
+    <line x1="782" y1="313" x2="1058" y2="313" stroke="#d2d9e2"/>
+    <text x="782" y="344" font-size="16" fill="#2a3341">Security</text><text x="990" y="344" font-size="16" font-weight="800" fill="#2a3341">74%</text>
+    <line x1="782" y1="359" x2="1058" y2="359" stroke="#d2d9e2"/>
+  </g>
+  <rect x="782" y="383" width="276" height="79" rx="16" fill="#f8fafc" stroke="#cad2dc"/>
+  <text x="798" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#66768c">PREDICTED OUTCOME</text>
+  <text x="798" y="448" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" font-weight="850" fill="#243248">First</text>
+  <text x="928" y="442" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#2cae9b">71.2% weighted</text>
+  <!-- Rendered to PNG by GitHub Actions for social sharing. -->
+</svg>

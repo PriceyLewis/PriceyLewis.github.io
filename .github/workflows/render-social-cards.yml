@@ -1,0 +1,44 @@
+name: Render social preview cards
+
+on:
+  push:
+    paths:
+      - "assets/social-academic-performance-calculator.svg"
+      - "assets/social-pc-part-picker.svg"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Install SVG renderer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+
+      - name: Render 1200x630 PNG cards
+        run: |
+          rsvg-convert -w 1200 -h 630 assets/social-academic-performance-calculator.svg -o assets/social-academic-performance-calculator.png
+          rsvg-convert -w 1200 -h 630 assets/social-pc-part-picker.svg -o assets/social-pc-part-picker.png
+          file assets/social-academic-performance-calculator.png
+          file assets/social-pc-part-picker.png
+
+      - name: Commit rendered cards
+        run: |
+          if git diff --quiet -- assets/social-academic-performance-calculator.png assets/social-pc-part-picker.png; then
+            echo "Social cards are already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/social-academic-performance-calculator.png assets/social-pc-part-picker.png
+          git commit -m "Render project social preview cards"
+          git push origin HEAD:${{ github.ref_name }}
