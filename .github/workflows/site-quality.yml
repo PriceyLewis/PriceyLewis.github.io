@@ -1,0 +1,26 @@
+name: Portfolio site quality
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  static-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        run: node --check script.js
+
+      - name: Check Python verifier syntax
+        run: python -m py_compile scripts/check_site.py
+
+      - name: Validate static site
+        run: python scripts/check_site.py
