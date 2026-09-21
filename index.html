@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow">
   <meta name="description" content="Lewis Price — First-Class Computer Science graduate and IT Support Analyst. Recruiter-facing software portfolio featuring verified full-stack, mobile, Linux desktop and Java projects.">
   <meta name="theme-color" content="#0a0d12">
   <meta property="og:title" content="Lewis Price | Software & Technical Portfolio">
@@ -11,19 +13,56 @@
   <meta property="og:url" content="https://priceylewis.github.io/">
   <meta property="og:image" content="https://priceylewis.github.io/assets/social-card.png">
   <meta property="og:image:alt" content="Lewis Price software and technical portfolio">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lewis Price | Software & Technical Portfolio">
   <meta name="twitter:description" content="Full-stack, mobile, Java and Linux engineering projects with automated verification and live technical-support experience.">
   <meta name="twitter:image" content="https://priceylewis.github.io/assets/social-card.png">
   <link rel="canonical" href="https://priceylewis.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
   <title>Lewis Price | Software & Technical Portfolio</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lewis Price",
+    "url": "https://priceylewis.github.io/",
+    "sameAs": [
+      "https://github.com/PriceyLewis",
+      "https://www.linkedin.com/in/lewis-price-profile/"
+    ],
+    "jobTitle": "1st Line Retail Service Desk Analyst",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Edge Hill University"
+    },
+    "knowsAbout": [
+      "Software Engineering",
+      "Application Support",
+      "Python",
+      "Django",
+      "Java",
+      "TypeScript",
+      "React Native",
+      "Linux",
+      "Technical Troubleshooting"
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="#top" aria-label="Lewis Price portfolio home">Lewis<span>.</span>Price</a>
-    <nav class="nav-links" aria-label="Primary navigation">
+    <a class="brand" href="#main-content" aria-label="Lewis Price portfolio home">Lewis<span>.</span>Price</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -33,19 +72,18 @@
   </div>
 </header>
 
-<main id="top">
+<main id="main-content">
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Software Engineering · Application Support · Technical Operations</div>
         <h1>I build software and solve problems in live systems.</h1>
-        <p class="hero-copy">I’m Lewis Price, a First-Class Computer Science graduate and 1st Line IT Support Analyst. I combine hands-on support experience with software projects across full-stack web, mobile, Java desktop and Linux systems — with an emphasis on useful products, resilient behaviour and verifiable results.</p>
+        <p class="hero-copy">I’m Lewis Price, a First-Class Computer Science graduate and 1st Line Retail Service Desk Analyst. I combine hands-on support experience with software projects across full-stack web, mobile, Java desktop and Linux systems — with an emphasis on useful products, resilient behaviour and verifiable results.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore selected projects</a>
+          <a class="btn primary" href="#projects">View selected projects</a>
           <a class="btn secondary" href="assets/Lewis-Price-CV.pdf" target="_blank" rel="noreferrer">Download CV ↗</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/lewis-price-profile/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a class="btn secondary" href="https://github.com/PriceyLewis" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
+        <p class="hero-status"><span aria-hidden="true">●</span> Warrington, UK · Open to software engineering, application support, cloud/platform and technical operations roles</p>
         <div class="hero-proof" aria-label="Profile highlights">
           <div><strong>First-Class</strong><span>BSc (Hons) Computer Science</span></div>
           <div><strong>Automated checks</strong><span>CI, browser tests, type checks and regression tests</span></div>
@@ -90,57 +128,94 @@
       </div>
 
       <div class="project-grid">
-        <a class="project-card featured" href="projects/predictmygrade.html">
-          <div class="project-visual shot-wrap">
+        <article class="project-card featured">
+          <a class="project-visual shot-wrap project-visual-link" href="projects/predictmygrade.html" aria-label="Read the PredictMyGrade case study">
             <span class="preview-badge">Flagship · Full stack</span>
-            <img class="project-shot" src="https://raw.githubusercontent.com/PriceyLewis/PredictMyGrade-Demo/main/docs/screenshots/predictmygrade-login-dark.png" alt="PredictMyGrade demo login screen captured by Playwright">
-          </div>
+            <img class="project-shot" src="https://raw.githubusercontent.com/PriceyLewis/PredictMyGrade-Demo/main/docs/screenshots/predictmygrade-login-dark.png" alt="PredictMyGrade demo login screen captured by Playwright" loading="lazy" decoding="async">
+          </a>
           <div class="project-content">
             <div class="project-meta"><span class="tag">Django</span><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Playwright</span><span class="tag">Live demo</span></div>
-            <h3>PredictMyGrade</h3>
+            <h3><a href="projects/predictmygrade.html">PredictMyGrade</a></h3>
             <p>A portfolio-grade academic analytics application combining persisted student data, dashboards, forecasting-style tools, study planning, demo-safe feature gating and browser-level verification.</p>
             <div class="project-evidence"><span>Evidence:</span> live Render demo · backend regression tests · Playwright browser journeys · GitHub Actions CI · explicit mock-only billing and AI demo flows</div>
-            <div class="project-link">Read case study <span>→</span></div>
+            <div class="project-footer">
+              <a class="project-link" href="projects/predictmygrade.html">Read case study <span>→</span></a>
+              <div class="project-actions" aria-label="PredictMyGrade links">
+                <a class="mini-btn" href="https://predictmygrade-demo.onrender.com/" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="mini-btn" href="https://github.com/PriceyLewis/PredictMyGrade-Demo" target="_blank" rel="noreferrer">Source ↗</a>
+              </div>
+            </div>
           </div>
-        </a>
+        </article>
 
-        <a class="project-card" href="projects/guardian.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">Desktop · Security · Interactive demo</span><img class="project-shot" src="https://raw.githubusercontent.com/PriceyLewis/Guardian-AntiVirus/main/docs/screenshots/guardian-overview.png" alt="Guardian Antivirus overview screen captured from the PySide6 application"></div>
+        <article class="project-card">
+          <a class="project-visual shot-wrap project-visual-link" href="projects/guardian.html" aria-label="Read the Guardian Antivirus case study">
+            <span class="preview-badge">Desktop · Security · Demo</span>
+            <img class="project-shot" src="https://raw.githubusercontent.com/PriceyLewis/Guardian-AntiVirus/main/docs/screenshots/guardian-overview.png" alt="Guardian Antivirus overview screen captured from the PySide6 application" loading="lazy" decoding="async">
+          </a>
           <div class="project-content">
             <div class="project-meta"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">ClamAV</span><span class="tag">SQLite</span><span class="tag">Interactive demo</span></div>
-            <h3>Guardian Antivirus</h3>
+            <h3><a href="projects/guardian.html">Guardian Antivirus</a></h3>
             <p>A Linux desktop security application coordinating malware scanning, asynchronous filesystem monitoring, quarantine workflows, persistent history and defensive settings behaviour.</p>
             <div class="project-evidence"><span>Evidence:</span> interactive browser demo · pytest regression suite · Chromium demo journeys · quarantine/restore checks · Linux-specific integration documentation</div>
-            <div class="project-link">Read case study <span>→</span></div>
+            <div class="project-footer">
+              <a class="project-link" href="projects/guardian.html">Read case study <span>→</span></a>
+              <div class="project-actions" aria-label="Guardian Antivirus links">
+                <a class="mini-btn" href="https://priceylewis.github.io/Guardian-AntiVirus/" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="mini-btn" href="https://github.com/PriceyLewis/Guardian-AntiVirus" target="_blank" rel="noreferrer">Source ↗</a>
+              </div>
+            </div>
           </div>
-        </a>
+        </article>
 
-        <a class="project-card" href="projects/student-toolkit.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">Mobile · Interactive demo</span><img class="project-shot" src="https://raw.githubusercontent.com/PriceyLewis/StudentToolKit-OS-Demo/main/docs/screenshots/student-toolkit-dashboard.png" alt="Student Toolkit OS interactive demo dashboard captured from the Expo web build"></div>
+        <article class="project-card">
+          <a class="project-visual shot-wrap project-visual-link" href="projects/student-toolkit.html" aria-label="Read the Student Toolkit OS case study">
+            <span class="preview-badge">Mobile · Interactive demo</span>
+            <img class="project-shot" src="https://raw.githubusercontent.com/PriceyLewis/StudentToolKit-OS-Demo/main/docs/screenshots/student-toolkit-dashboard.png" alt="Student Toolkit OS interactive demo dashboard captured from the Expo web build" loading="lazy" decoding="async">
+          </a>
           <div class="project-content">
             <div class="project-meta"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span><span class="tag">AsyncStorage</span><span class="tag">Unit tested</span></div>
-            <h3>Student Toolkit OS</h3>
+            <h3><a href="projects/student-toolkit.html">Student Toolkit OS</a></h3>
             <p>A local-first mobile productivity product with an instant portfolio demo, ranked daily priorities, confidence-aware revision planning, habit tracking, calendar-based analytics and recoverable on-device data.</p>
             <div class="project-evidence"><span>Evidence:</span> interactive sample-data mode · Node regression tests · transactional backup rollback · ESLint + TypeScript CI · verified Expo web export</div>
-            <div class="project-link">Read updated case study <span>→</span></div>
+            <div class="project-footer">
+              <a class="project-link" href="projects/student-toolkit.html">Read case study <span>→</span></a>
+              <div class="project-actions" aria-label="Student Toolkit OS links">
+                <a class="mini-btn" href="https://priceylewis.github.io/StudentToolKit-OS-Demo/" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="mini-btn" href="https://github.com/PriceyLewis/StudentToolKit-OS-Demo" target="_blank" rel="noreferrer">Source ↗</a>
+              </div>
+            </div>
           </div>
-        </a>
+        </article>
 
-        <a class="project-card" href="projects/dissertation.html">
-          <div class="project-visual shot-wrap"><span class="preview-badge">Dissertation · Java</span><img class="project-shot" src="assets/dissertation.svg" alt="Academic Performance Calculator interface preview"></div>
+        <article class="project-card">
+          <a class="project-visual shot-wrap project-visual-link" href="projects/dissertation.html" aria-label="Read the Academic Performance Calculator case study">
+            <span class="preview-badge">Dissertation · Java</span>
+            <img class="project-shot" src="assets/dissertation.svg" alt="Academic Performance Calculator interface preview" loading="lazy" decoding="async">
+          </a>
           <div class="project-content">
             <div class="project-meta"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">UCanAccess</span><span class="tag">Microsoft Access</span><span class="tag">Browser demo</span></div>
-            <h3>Academic Performance Calculator</h3>
+            <h3><a href="projects/dissertation.html">Academic Performance Calculator</a></h3>
             <p>My final-year dissertation: a Java desktop application for module management, weighted performance tracking, charts, local persistence, CSV workflows and prediction-style academic guidance.</p>
             <div class="project-evidence"><span>Evidence:</span> one-click browser demo · JUnit + Maven CI · Chromium launch verification · database and file-handling workflows</div>
-            <div class="project-link">Read case study <span>→</span></div>
+            <div class="project-footer">
+              <a class="project-link" href="projects/dissertation.html">Read case study <span>→</span></a>
+              <div class="project-actions" aria-label="Academic Performance Calculator links">
+                <a class="mini-btn" href="https://priceylewis.github.io/Academic-Performance-Calculator/" target="_blank" rel="noreferrer">Live demo ↗</a>
+                <a class="mini-btn" href="https://github.com/PriceyLewis/Academic-Performance-Calculator" target="_blank" rel="noreferrer">Source ↗</a>
+              </div>
+            </div>
           </div>
-        </a>
+        </article>
       </div>
 
       <div class="more-work">
         <div><span class="strip-kicker">Additional project · Live browser demo</span><strong>PC Part Picker Tool</strong><p>Java Swing team coursework with Microsoft Access, component search and filtering, basket and review flows, plus a deterministic local rule-based assistant. Recruiters can launch the actual Swing portfolio build in-browser, backed by a disposable demo data adapter and Chromium-verified CI.</p></div>
-        <a class="text-link" href="projects/pc-part-picker.html">View additional case study →</a>
+        <div class="more-work-actions">
+          <a class="text-link" href="projects/pc-part-picker.html">View case study →</a>
+          <a class="mini-btn" href="https://priceylewis.github.io/PCPartPickerTool-Demo/" target="_blank" rel="noreferrer">Live demo ↗</a>
+          <a class="mini-btn" href="https://github.com/PriceyLewis/PCPartPickerTool-Demo" target="_blank" rel="noreferrer">Source ↗</a>
+        </div>
       </div>
     </div>
   </section>
@@ -171,6 +246,10 @@
         <div class="skill-group"><strong>Software</strong><div class="skill-cloud"><span class="skill">Python</span><span class="skill">Django</span><span class="skill">Java</span><span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">React Native</span><span class="skill">Expo</span><span class="skill">PySide6 / Qt</span></div></div>
         <div class="skill-group"><strong>Data, systems & verification</strong><div class="skill-cloud"><span class="skill">SQL</span><span class="skill">SQLite</span><span class="skill">Microsoft Access</span><span class="skill">Git / GitHub</span><span class="skill">GitHub Actions</span><span class="skill">Playwright</span><span class="skill">pytest</span><span class="skill">Linux</span><span class="skill">ClamAV</span></div></div>
         <div class="skill-group"><strong>Support</strong><div class="skill-cloud"><span class="skill">Incident troubleshooting</span><span class="skill">Remote support</span><span class="skill">Technical escalation</span><span class="skill">User communication</span><span class="skill">Business-critical systems</span></div></div>
+        <div class="credential-panel">
+          <div><span class="strip-kicker">Certification</span><strong>Microsoft SC-900</strong><p>Security, Compliance, and Identity Fundamentals</p></div>
+          <span class="credential-status">Microsoft Certified</span>
+        </div>
       </div>
     </div>
   </section>
@@ -193,7 +272,7 @@
 <footer>
   <div class="container footer-inner">
     <span>© <span data-year></span> Lewis Price</span>
-    <span>Focused technical portfolio · curated source · verifiable engineering work</span>
+    <span class="footer-links"><a href="https://www.linkedin.com/in/lewis-price-profile/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/PriceyLewis" target="_blank" rel="noreferrer">GitHub ↗</a></span>
   </div>
 </footer>
 <script src="script.js"></script>
