@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0a0d12"/>
+      <stop offset="1" stop-color="#121a29"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1070" cy="40" r="240" fill="#7c9cff" opacity=".08"/>
+  <circle cx="1110" cy="610" r="250" fill="#52dfc8" opacity=".07"/>
+  <rect x="54" y="54" width="1092" height="522" rx="34" fill="#11161f" stroke="#2c3646" stroke-width="2"/>
+  <rect x="90" y="92" width="90" height="8" rx="4" fill="#52dfc8"/>
+  <text x="90" y="146" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="800" fill="#52dfc8" letter-spacing=".5">JAVA DESKTOP · TEAM COURSEWORK</text>
+  <text x="90" y="216" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="50" font-weight="800" fill="#f5f7fb">PC Part Picker Tool</text>
+  <text x="90" y="272" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" fill="#aab4c3">Component browsing, basket workflows and a deterministic</text>
+  <text x="90" y="304" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" fill="#aab4c3">local assistant backed by Microsoft Access.</text>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="750" fill="#dfe5ef">
+    <rect x="90" y="334" width="74" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="108" y="360">Java</text>
+    <rect x="174" y="334" width="90" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="190" y="360">Swing</text>
+    <rect x="274" y="334" width="96" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="290" y="360">Access</text>
+    <rect x="380" y="334" width="100" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="396" y="360">Maven</text>
+    <rect x="490" y="334" width="160" height="40" rx="12" fill="#181f2b" stroke="#374356"/><text x="506" y="360">Browser demo</text>
+  </g>
+
+  <text x="90" y="540" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="800" fill="#7c9cff">Lewis Price · priceylewis.github.io</text>
+
+  <rect x="745" y="118" width="353" height="372" rx="24" fill="#edf1f6" stroke="#4b586c" stroke-width="2"/>
+  <rect x="765" y="140" width="313" height="44" rx="12" fill="#243248"/>
+  <text x="784" y="169" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="800" fill="#f8fafc">PC Part Picker Tool</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="780" y="208" width="282" height="54" rx="11" fill="#f8fafc" stroke="#d2d9e2"/>
+    <text x="795" y="231" font-size="15" font-weight="800" fill="#2a3341">Ryzen 7 5700X</text>
+    <text x="970" y="249" font-size="12" font-weight="800" fill="#2a3341">£149.99</text>
+    <rect x="780" y="274" width="282" height="54" rx="11" fill="#f8fafc" stroke="#d2d9e2"/>
+    <text x="795" y="297" font-size="15" font-weight="800" fill="#2a3341">Ryzen 5 5600</text>
+    <text x="970" y="315" font-size="12" font-weight="800" fill="#2a3341">£104.99</text>
+  </g>
+  <rect x="780" y="350" width="282" height="112" rx="14" fill="#172234"/>
+  <text x="796" y="380" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#f4f7fb">Build assistant</text>
+  <text x="796" y="408" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#becada">“Find a Ryzen CPU</text>
+  <text x="796" y="429" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#becada">under £180.”</text>
+  <rect x="936" y="389" width="109" height="55" rx="10" fill="#1d6a61"/>
+  <text x="949" y="416" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="800" fill="#effffc">5700X</text>
+  <text x="949" y="434" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" fill="#effffc">matched</text>
+</svg>
