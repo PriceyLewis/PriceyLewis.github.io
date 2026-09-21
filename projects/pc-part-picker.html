@@ -9,12 +9,15 @@
   <meta property="og:description" content="PC Part Picker case study — Java Swing, Microsoft Access, a deterministic local recommendation assistant, Maven and CI.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://priceylewis.github.io/projects/pc-part-picker.html">
-  <meta property="og:image" content="https://priceylewis.github.io/assets/social-card.png">
-  <meta property="og:image:alt" content="Lewis Price software and technical portfolio">
+  <meta property="og:image" content="https://priceylewis.github.io/assets/social-pc-part-picker.png">
+  <meta property="og:image:alt" content="PC Part Picker Tool portfolio case study preview">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PC Part Picker Tool | Lewis Price">
   <meta name="twitter:description" content="PC Part Picker case study — Java Swing, Microsoft Access, a deterministic local recommendation assistant, Maven and CI.">
-  <meta name="twitter:image" content="https://priceylewis.github.io/assets/social-card.png">
+  <meta name="twitter:image" content="https://priceylewis.github.io/assets/social-pc-part-picker.png">
   <link rel="canonical" href="https://priceylewis.github.io/projects/pc-part-picker.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../site.webmanifest">
@@ -43,6 +46,7 @@
 <div class="case-card"><h2>What the demo includes</h2><ul><li>Account sign-up and demo login flows.</li><li>In-stock part browsing across stores.</li><li>Keyword, brand and price filtering.</li><li>A deterministic local rule-based assistant for component and store questions.</li><li>Basket management with running totals.</li><li>Store reviews and recent search history.</li><li>Database query/update handling through UCanAccess / Jackcess.</li></ul></div>
 <div class="case-card"><h2>Engineering focus</h2><ul><li><strong>Database-backed UI:</strong> multiple Swing flows share state stored in Microsoft Access.</li><li><strong>Deterministic assistant behaviour:</strong> recommendations are generated locally from database contents rather than depending on an external AI service.</li><li><strong>Safer demo actions:</strong> mutating assistant-style actions require confirmation.</li><li><strong>Portable demo setup:</strong> the app searches for its database and assets rather than relying on one developer-machine path.</li></ul></div>
 <div class="case-card"><h2>Verification</h2><p>GitHub Actions builds and tests the Java application, packages the runnable JAR and separately launches the browser distribution in Chromium through CheerpJ. The browser workflow waits for a Java-level readiness signal from the Swing home screen before publishing the verified build to GitHub Pages.</p></div>
+<div class="case-card"><div class="eyebrow">Outcome</div><h2>What the finished project delivers</h2><div class="verification-grid"><div><strong>Coursework refined for review</strong><span>The team project has been turned into a clearer portfolio build while keeping my contribution and the original team context explicit.</span></div><div><strong>Self-contained assistant</strong><span>The portfolio version uses deterministic local recommendation logic instead of requiring a paid or hosted AI dependency.</span></div><div><strong>Browser-verified Swing build</strong><span>Maven/JUnit and Chromium verification confirm that the deployed Java application reaches its real Swing home screen.</span></div></div></div>
 <div class="case-card"><h2>Architecture</h2><div class="architecture">Java Swing UI
      ↓
 Main application flow
