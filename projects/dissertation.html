@@ -9,12 +9,15 @@
   <meta property="og:description" content="Academic Performance Calculator case study — Java Swing, Microsoft Access, Maven and an inspectable random-forest classifier with automated tests.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://priceylewis.github.io/projects/dissertation.html">
-  <meta property="og:image" content="https://priceylewis.github.io/assets/social-card.png">
-  <meta property="og:image:alt" content="Lewis Price software and technical portfolio">
+  <meta property="og:image" content="https://priceylewis.github.io/assets/social-academic-performance-calculator.png">
+  <meta property="og:image:alt" content="Academic Performance Calculator portfolio case study preview">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Academic Performance Calculator | Lewis Price">
   <meta name="twitter:description" content="Academic Performance Calculator case study — Java Swing, Microsoft Access, Maven and an inspectable random-forest classifier with automated tests.">
-  <meta name="twitter:image" content="https://priceylewis.github.io/assets/social-card.png">
+  <meta name="twitter:image" content="https://priceylewis.github.io/assets/social-academic-performance-calculator.png">
   <link rel="canonical" href="https://priceylewis.github.io/projects/dissertation.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../site.webmanifest">
@@ -43,6 +46,7 @@
 <div class="case-card"><h2>What I built</h2><ul><li>Java Swing interface for adding, deleting and clearing module records.</li><li>Undo-style restoration for accidental table changes.</li><li>Weighted performance calculations using grade and credit information.</li><li>CSV export and import workflows.</li><li>Microsoft Access persistence through UCanAccess.</li><li>Bar and pie chart views for academic performance.</li><li>Prediction-style classification output based on current module data.</li><li>Built-in sample data and a demo login flow so the project is presentation-ready.</li></ul></div>
 <div class="case-card"><h2>Engineering decisions</h2><ul><li><strong>Desktop-first scope:</strong> Swing and local persistence matched the dissertation goal and kept the project self-contained.</li><li><strong>Data validation:</strong> module inputs remain internally consistent before being used in weighted calculations or predictions.</li><li><strong>Recoverability:</strong> import/export and undo-style behaviour make the tool safer to experiment with.</li><li><strong>Source-first repository:</strong> generated Java build output has been removed from the current branch, leaving source, assets, database dependencies and reproducible launch tooling.</li></ul></div>
 <div class="case-card"><h2>Verification</h2><p>GitHub Actions builds the Maven project, runs JUnit tests and packages the full desktop JAR. A separate browser pipeline builds a thin Swing-only JAR, launches it in Chromium through CheerpJ, requires the actual Java dashboard to report readiness, captures the rendered interface and only then publishes the build to GitHub Pages.</p></div>
+<div class="case-card"><div class="eyebrow">Outcome</div><h2>What the finished project delivers</h2><div class="verification-grid"><div><strong>Complete assessed application</strong><span>A single Java Swing system combines module management, weighted calculations, charts, file workflows and Microsoft Access persistence.</span></div><div><strong>One-click Java demo</strong><span>The portfolio build launches the actual Swing dashboard in Chromium through CheerpJ with no local Java installation required.</span></div><div><strong>Reproducible delivery</strong><span>Maven and JUnit verify the desktop build while a separate browser pipeline waits for Java-level readiness before publishing.</span></div></div></div>
 <div class="case-card"><h2>Architecture</h2><div class="architecture">Java Swing UI
       ↓
 Event handling + validation
