@@ -109,8 +109,15 @@ jobs:
             let ready = false;
             for (let i = 0; i < 18 && !ready; i++) {
               try {
-                await waitHealthy(page, urls.predict);
-                ready = await page.getByRole('button', { name: 'Continue as Demo User' }).count() > 0;
+                const response = await page.goto(urls.predict, {
+                  waitUntil: 'domcontentloaded',
+                  timeout: 120000,
+                });
+                const healthy = Boolean(response && response.status() < 400);
+                if (healthy) {
+                  await page.waitForTimeout(700);
+                  ready = await page.getByRole('button', { name: 'Continue as Demo User' }).count() > 0;
+                }
               } catch {}
               if (!ready) await page.waitForTimeout(10000);
             }
