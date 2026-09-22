@@ -177,10 +177,12 @@ footer { padding: 36px 0 48px; color: #7f8999; font-size: .9rem; }
 .case-actions .btn { width: 100%; }
 
 .project-visual.shot-wrap { padding: 18px; position: relative; overflow: hidden; }
-.project-shot { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 16px 36px rgba(0,0,0,.28); transition: transform .35s ease, filter .35s ease; background: #0c1016; }
+.project-shot { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; object-position: top; display: block; border-radius: 18px; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 16px 36px rgba(0,0,0,.28); transition: transform .35s ease, filter .35s ease; background: #0c1016; }
 .project-card:hover .project-shot { transform: scale(1.018); filter: saturate(1.04) contrast(1.02); }
 .case-shot { padding: 0; overflow: hidden; }
-.case-shot-image { width: 100%; display: block; }
+.screenshot-link { display: block; aspect-ratio: 16 / 11; overflow: hidden; }
+.screenshot-link:focus-visible { outline: 3px solid var(--accent-2); outline-offset: -3px; }
+.case-shot-image { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 .shot-caption { padding: 14px 18px 18px; color: var(--muted); font-size: .92rem; border-top: 1px solid var(--line); }
 .preview-badge { position: absolute; z-index: 2; top: 28px; right: 28px; padding: 6px 10px; border-radius: 999px; background: rgba(8,12,18,.82); border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(10px); color: #dce4ef; font-size: .72rem; font-weight: 750; letter-spacing: .02em; }
 
