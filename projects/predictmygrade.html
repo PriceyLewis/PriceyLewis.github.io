@@ -4,20 +4,20 @@
     <meta name="theme-color" content="#0a0d12">
   <meta name="color-scheme" content="dark">
   <meta name="robots" content="index,follow">
-<meta name="description" content="PredictMyGrade case study — a Django academic analytics product demo verified by 115 backend tests, 130 Playwright browser/visual tests and live-demo smoke testing.">
+<meta name="description" content="PredictMyGrade — an academic analytics product for grade tracking, progress insights and study planning. Visit the live product; source code is private.">
   <meta property="og:title" content="PredictMyGrade | Lewis Price">
-  <meta property="og:description" content="PredictMyGrade case study — a Django academic analytics product demo with persistence, mock subscription journeys and Playwright browser verification.">
+  <meta property="og:description" content="PredictMyGrade — an academic analytics product for grade tracking, progress insights and study planning. Visit the live product; source code is private.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://priceylewis.github.io/projects/predictmygrade.html">
-  <meta property="og:image" content="https://priceylewis.github.io/assets/screenshots/predictmygrade-dashboard.png">
-  <meta property="og:image:width" content="1440">
-  <meta property="og:image:height" content="1258">
-  <meta property="og:image:alt" content="PredictMyGrade Django portfolio demo login screen">
+  <meta property="og:image" content="https://priceylewis.github.io/assets/screenshots/predictmygrade-product-home.jpg">
+  <meta property="og:image:width" content="1348">
+  <meta property="og:image:height" content="926">
+  <meta property="og:image:alt" content="PredictMyGrade academic dashboard preview">
   <meta property="og:image:type" content="image/png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PredictMyGrade | Lewis Price">
-  <meta name="twitter:description" content="PredictMyGrade case study — a Django academic analytics product demo with persistence, mock subscription journeys and Playwright browser verification.">
-  <meta name="twitter:image" content="https://priceylewis.github.io/assets/screenshots/predictmygrade-dashboard.png">
+  <meta name="twitter:description" content="PredictMyGrade — an academic analytics product for grade tracking, progress insights and study planning. Visit the live product; source code is private.">
+  <meta name="twitter:image" content="https://priceylewis.github.io/assets/screenshots/predictmygrade-product-home.jpg">
   <link rel="canonical" href="https://priceylewis.github.io/projects/predictmygrade.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../site.webmanifest">
@@ -35,29 +35,23 @@
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#experience">Experience</a>
       <a href="../index.html#contact">Contact</a>
-      <a class="nav-cta" href="https://github.com/PriceyLewis/PredictMyGrade-Demo" target="_blank" rel="noreferrer">Source ↗</a>
+      <a class="nav-cta" href="https://predictmygrade.com/" target="_blank" rel="noreferrer">Live product ↗</a>
     </nav>
   </div>
 </header>
-<main id="main-content"><section class="case-hero"><div class="container"><a class="breadcrumb" href="../index.html#projects">← Back to selected projects</a><div class="eyebrow">Flagship case study · Full-stack web application</div><h1>PredictMyGrade</h1><p class="lede">A Django academic analytics portfolio application designed to demonstrate end-to-end product engineering: persisted student data, forecasting-style tools, study planning, demo-safe feature gating, settings and recovery flows, and browser-level verification.</p><div class="hero-actions"><a class="btn primary" href="https://predictmygrade-demo.onrender.com/" target="_blank" rel="noreferrer">Launch live demo ↗</a><a class="btn secondary" href="https://github.com/PriceyLewis/PredictMyGrade-Demo" target="_blank" rel="noreferrer">View source ↗</a></div></div></section>
+<main id="main-content">
+<section class="case-hero"><div class="container">
+<a class="breadcrumb" href="../index.html#projects">← Back to selected projects</a>
+<div class="eyebrow">Flagship project · Live product</div>
+<h1>PredictMyGrade</h1>
+<p class="lede">An academic analytics product that brings grade tracking, progress insights, forecasting and study planning into one connected experience. Access is opening gradually, and users can join the waitlist now.</p>
+<div class="hero-actions"><a class="btn primary" href="https://predictmygrade.com/" target="_blank" rel="noreferrer">Visit live product ↗</a><a class="btn secondary" href="https://predictmygrade.com/waitlist/" target="_blank" rel="noreferrer">Join the waitlist ↗</a></div>
+</div></section>
 <section class="section" style="padding-top:20px"><div class="container case-grid"><div class="case-main">
-<div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/predictmygrade-dashboard.png" target="_blank" rel="noopener" aria-label="Open full predictmygrade screenshot"><img class="case-shot-image" src="../assets/screenshots/predictmygrade-dashboard.png" alt="PredictMyGrade dashboard with sample grades, study planning and analytics" width="1440" height="7958" loading="lazy" decoding="async"></a><div class="shot-caption">Dashboard from the tested demo build with sample academic data. Select image to view full size.</div></div>
-<div class="case-card"><h2>The challenge</h2><p>Academic tools often stop at simple grade calculators. I wanted to explore a broader product where a student could record performance, understand progress, test possible outcomes, organise study activity and move through realistic account and premium-style journeys without the interface feeling like unrelated features stitched together.</p><p class="callout">The core engineering challenge was product cohesion: keeping data, navigation, calculations, settings, recovery behaviour and feature gating consistent as the application grew.</p></div>
-<div class="case-card"><h2>What I built</h2><ul><li>Persistent university, college and GCSE-oriented tracking flows with weighted progress summaries.</li><li>Dashboards, targets, what-if forecasting, goals, deadlines, snapshots, achievements and study-planning tools.</li><li>Demo-safe authentication and disposable reviewer login flows.</li><li>Free / Premium feature gating backed by real application state.</li><li>Mock checkout, plan switching and downgrade behaviour with no real payment processor involved.</li><li>AI-style mentor and reporting experiences implemented as deterministic local demo behaviour rather than requiring a paid external service.</li><li>Settings persistence, import/export and backup/restore flows.</li><li>Backend regression tests plus Playwright browser coverage for key reviewer journeys.</li></ul></div>
-<div class="case-card"><h2>Engineering decisions</h2><ul><li><strong>Demo boundaries are explicit:</strong> billing and AI-style functionality are intentionally mock-only so the portfolio never implies that a production SaaS is running.</li><li><strong>Progressive complexity:</strong> core academic data remains understandable even as forecasting, planning and premium-style features are layered on top.</li><li><strong>Verification from the user’s point of view:</strong> Playwright checks important browser journeys in addition to backend tests.</li><li><strong>Recoverability matters:</strong> settings and data-management flows are treated as product features rather than afterthoughts.</li></ul></div>
-<div class="case-card"><h2>Verification</h2><p>The final portfolio audit passed <strong>115/115 Django backend tests</strong> and <strong>130/130 Playwright browser and visual tests</strong>, including desktop/mobile and dark/light coverage. A separate live-deployment smoke test also passed against the public Render demo, verifying demo sign-in, core pages, Free → Premium → Free mock billing, Premium-only report access and restored gating after downgrade.</p></div>
-<div class="case-card"><div class="eyebrow">Outcome</div><h2>What the finished project delivers</h2><div class="verification-grid"><div><strong>245 automated checks</strong><span>115 Django backend tests plus 130 Playwright browser and visual tests passed in the final portfolio audit.</span></div><div><strong>End-to-end demo journey</strong><span>Live smoke testing verifies demo sign-in, Free → Premium → Free mock billing, gated report access and restored downgrade behaviour.</span></div><div><strong>Recoverable product state</strong><span>Settings persistence, import/export and backup/restore are treated as working product flows rather than presentation-only screens.</span></div></div></div>
-<div class="case-card"><h2>Architecture</h2><div class="architecture">Browser
-   ↓
-Django templates + views
-   ↓
-Models / forms / services / tasks
-   ↓
-SQLite demo persistence
-   ↓
-Mock billing + deterministic local assistant
-   ↓
-Backend tests + Playwright E2E smoke tests</div></div>
-<div class="case-card"><h2>What this demonstrates</h2><p>This is my strongest full-stack portfolio project because it shows more than framework knowledge. It demonstrates how I structure a multi-feature product, improve consistency across screens, think about failure states, test user journeys and keep the application understandable as scope grows.</p></div>
-</div><aside class="case-side"><div class="case-card"><h2>Project snapshot</h2><div class="stat-list"><div class="stat"><strong>Stack</strong><span>Python, Django 5, SQLite, Playwright</span></div><div class="stat"><strong>My role</strong><span>Solo product engineering</span></div><div class="stat"><strong>Focus</strong><span>Full-stack architecture + UX consistency</span></div><div class="stat"><strong>Status</strong><span>Live portfolio demo · mock-only product flows</span></div><div class="stat"><strong>Verification</strong><span>115 backend + 130 browser/visual tests</span></div><div class="stat"><strong>Evidence</strong><span>Public source repository</span></div></div></div><div class="case-actions"><a class="btn primary" href="https://predictmygrade-demo.onrender.com/" target="_blank" rel="noreferrer">Launch live demo ↗</a><a class="btn secondary" href="https://github.com/PriceyLewis/PredictMyGrade-Demo" target="_blank" rel="noreferrer">View source code ↗</a><a class="btn secondary" href="../index.html#contact">Contact me</a></div></aside></div></section></main>
+<div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/predictmygrade-product-home.jpg" target="_blank" rel="noopener" aria-label="Open PredictMyGrade product homepage screenshot"><img class="case-shot-image" src="../assets/screenshots/predictmygrade-product-home.jpg" alt="PredictMyGrade product homepage" width="1348" height="926" loading="lazy" decoding="async"></a><div class="shot-caption">The current product website. Students can join the waitlist for access.</div></div><div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/predictmygrade-product-dashboard.jpg" target="_blank" rel="noopener" aria-label="Open PredictMyGrade academic dashboard using sample data screenshot"><img class="case-shot-image" src="../assets/screenshots/predictmygrade-product-dashboard.jpg" alt="PredictMyGrade academic dashboard using sample data" width="1348" height="926" loading="lazy" decoding="async"></a><div class="shot-caption">Current product preview with sample grades, progress summaries and planning tools.</div></div><div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/predictmygrade-product-waitlist.jpg" target="_blank" rel="noopener" aria-label="Open PredictMyGrade waitlist page screenshot"><img class="case-shot-image" src="../assets/screenshots/predictmygrade-product-waitlist.jpg" alt="PredictMyGrade waitlist page" width="1348" height="926" loading="lazy" decoding="async"></a><div class="shot-caption">Users can join the free waitlist and receive an email when their place is ready.</div></div><div class="case-card"><h2>The idea</h2><p>Students need more than a single grade calculation. PredictMyGrade brings academic progress and study planning together to help students understand where they stand and explore what to work towards next.</p></div>
+<div class="case-card"><h2>Product overview</h2><ul><li>Academic tracking across university, college and GCSE study.</li><li>Progress dashboards, grade targets and what-if planning.</li><li>Study goals, deadlines and planning tools.</li></ul><p>Visit the product website for current features, or join the free waitlist to hear when your place is ready.</p></div>
+<div class="case-card"><h2>My contribution</h2><p>I developed the product across its user experience and application behaviour, connecting academic tracking, planning and progress tools into a coherent student experience.</p></div>
+<div class="case-card"><h2>Explore PredictMyGrade</h2><p>PredictMyGrade is now featured here as a live product. Its source code is private and is not distributed through this portfolio.</p><a class="btn primary" href="https://predictmygrade.com/" target="_blank" rel="noreferrer">Visit PredictMyGrade ↗</a></div>
+</div><aside class="case-side"><div class="case-card"><h2>Project snapshot</h2><div class="stat-list"><div class="stat"><strong>Category</strong><span>Academic analytics</span></div><div class="stat"><strong>My role</strong><span>Solo product development</span></div><div class="stat"><strong>Focus</strong><span>Academic progress + study planning</span></div><div class="stat"><strong>Status</strong><span>Live website · waitlist open</span></div><div class="stat"><strong>Source code</strong><span>Private</span></div></div></div><div class="case-actions"><a class="btn primary" href="https://predictmygrade.com/" target="_blank" rel="noreferrer">Visit live product ↗</a><a class="btn secondary" href="https://predictmygrade.com/waitlist/" target="_blank" rel="noreferrer">Join the waitlist ↗</a><a class="btn secondary" href="../index.html#contact">Contact me</a></div></aside></div></section>
+</main>
 <footer><div class="container footer-inner"><span>© <span data-year></span> Lewis Price</span><a href="../index.html">Portfolio home</a></div></footer><script src="../script.js"></script></body></html>
