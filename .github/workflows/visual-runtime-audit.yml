@@ -32,7 +32,7 @@ jobs:
 
           const urls = {
             portfolio: 'https://priceylewis.github.io/',
-            predict: 'https://predictmygrade-demo.onrender.com/accounts/login/',
+            predict: 'https://predictmygrade.com/',
             student: 'https://priceylewis.github.io/StudentToolKit-OS-Demo/',
             academic: 'https://priceylewis.github.io/Academic-Performance-Calculator/',
             pc: 'https://priceylewis.github.io/PCPartPickerTool-Demo/',
@@ -106,70 +106,14 @@ jobs:
           async function predict(browser, viewport, suffix) {
             const page = await browser.newPage({ viewport });
             attachRuntimeChecks(page, 'predict-' + suffix);
-            let ready = false;
-            for (let i = 0; i < 18 && !ready; i++) {
-              try {
-                const response = await page.goto(urls.predict, {
-                  waitUntil: 'domcontentloaded',
-                  timeout: 120000,
-                });
-                const healthy = Boolean(response && response.status() < 400);
-                if (healthy) {
-                  await page.waitForTimeout(700);
-                  ready = await page.getByRole('button', { name: 'Continue as Demo User' }).count() > 0;
-                }
-              } catch {}
-              if (!ready) await page.waitForTimeout(10000);
-            }
-            assert(ready, 'PredictMyGrade did not become ready');
-            if (ready) {
-              await checkLayout(page, 'predict-login-' + suffix);
-              await screenshot(page, 'predict-login-' + suffix);
-              await page.getByRole('button', { name: 'Continue as Demo User' }).click();
-              await page.waitForLoadState('domcontentloaded');
-              await page.waitForTimeout(1200);
-              await checkLayout(page, 'predict-dashboard-' + suffix);
-              await screenshot(page, 'predict-dashboard-' + suffix);
-              for (const path of ['/modules/','/what-if/','/settings/','/welcome/','/upgrade/']) {
-                await waitHealthy(page, 'https://predictmygrade-demo.onrender.com' + path);
-                await checkLayout(page, 'predict' + path + suffix);
-
-                if (path === '/welcome/') {
-                  const card = page.locator('.feature-card').first();
-                  await card.waitFor();
-                  const visual = await card.evaluate(element => {
-                    const heading = element.querySelector('h3');
-                    const body = element.querySelector('p');
-                    return {
-                      cardBackground: getComputedStyle(element).backgroundColor,
-                      headingColor: heading ? getComputedStyle(heading).color : '',
-                      bodyColor: body ? getComputedStyle(body).color : '',
-                      headingText: heading?.textContent?.trim() || '',
-                    };
-                  });
-                  assert(Boolean(visual.headingText), 'PredictMyGrade welcome feature heading is blank');
-                  assert(
-                    visual.headingColor !== visual.cardBackground && visual.bodyColor !== visual.cardBackground,
-                    'PredictMyGrade welcome card contrast failed: ' + JSON.stringify(visual)
-                  );
-                }
-
-                if (path === '/upgrade/') {
-                  const comparison = page.locator('.comparison-table');
-                  await comparison.waitFor({ state: 'visible', timeout: 30000 });
-                  assert(
-                    (await comparison.innerText()).includes('Advanced analytics'),
-                    'PredictMyGrade upgrade comparison table content is missing'
-                  );
-                  assert(
-                    await page.locator('#upgrade-alert').isHidden(),
-                    'PredictMyGrade inactive upgrade alert is visible'
-                  );
-                }
-
-                if (path === '/welcome/' || path === '/upgrade/') {
-                  await screenshot(page, 'predict-' + path.replaceAll('/','') + '-' + suffix);
-                }
+            for (const [url, name] of [[urls.predict, 'home'], ['https://predictmygrade.com/waitlist/', 'waitlist']]) {
+              await waitHealthy(page, url);
+              await page.getByRole('heading', { level: 1 }).waitFor();
+              await checkLayout(page, 'predict-' + name + '-' + suffix);
+              await screenshot(page, 'predict-' + name + '-' + suffix);
+              if (name === 'waitlist') {
+                await page.getByLabel('Email', { exact: true }).waitFor();
+                await page.getByRole('button', { name: 'Join the waitlist', exact: true }).waitFor();
               }
             }
             await page.close();

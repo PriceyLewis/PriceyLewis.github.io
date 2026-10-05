@@ -37,7 +37,7 @@ jobs:
 
           const urls = {
             portfolio: 'https://priceylewis.github.io/',
-            predict: 'https://predictmygrade-demo.onrender.com/accounts/login/',
+            predict: 'https://predictmygrade.com/',
             student: 'https://priceylewis.github.io/StudentToolKit-OS-Demo/',
             academic: 'https://priceylewis.github.io/Academic-Performance-Calculator/',
             pc: 'https://priceylewis.github.io/PCPartPickerTool-Demo/',
@@ -77,7 +77,7 @@ jobs:
               }
 
               const cases = [
-                ['projects/predictmygrade.html', 'https://predictmygrade-demo.onrender.com/'],
+                ['projects/predictmygrade.html', 'https://predictmygrade.com/'],
                 ['projects/student-toolkit.html', 'https://priceylewis.github.io/StudentToolKit-OS-Demo/'],
                 ['projects/dissertation.html', 'https://priceylewis.github.io/Academic-Performance-Calculator/'],
                 ['projects/guardian.html', 'https://priceylewis.github.io/Guardian-AntiVirus/'],
@@ -87,26 +87,21 @@ jobs:
                 await gotoHealthy(page, urls.portfolio + path);
                 assert(await page.locator(`a[href="${href}"]`).count() > 0 ||
                        await page.locator(`a[href="${href.replace(/\/$/, '')}"]`).count() > 0,
-                       path + ' is missing live demo link ' + href);
+                       path + ' is missing project link ' + href);
               }
               await page.close();
             }
 
-            // PredictMyGrade: Render cold starts are allowed, then the live login must become usable.
+            // PredictMyGrade: check the public product and waitlist without submitting data.
             {
               const page = await browser.newPage();
-              let ready = false;
-              for (let attempt = 0; attempt < 18 && !ready; attempt++) {
-                try {
-                  const body = await gotoHealthy(page, urls.predict, 120000);
-                  ready = /Continue as Demo User/i.test(body);
-                } catch (error) {
-                  if (attempt === 17) throw error;
-                }
-                if (!ready) await page.waitForTimeout(10000);
-              }
-              assert(ready, 'PredictMyGrade live demo never exposed the demo login');
-              await page.getByRole('button', { name: 'Continue as Demo User' }).waitFor();
+              await gotoHealthy(page, urls.predict);
+              assert(await page.getByRole('link', { name: 'Join the waitlist', exact: true }).count() > 0,
+                'PredictMyGrade waitlist link is missing');
+              await gotoHealthy(page, 'https://predictmygrade.com/waitlist/');
+              await page.getByRole('heading', { name: 'Join the waitlist', exact: true }).waitFor();
+              await page.getByLabel('Email', { exact: true }).waitFor();
+              await page.getByRole('button', { name: 'Join the waitlist', exact: true }).waitFor();
               await page.close();
             }
 
