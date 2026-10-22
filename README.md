@@ -17,7 +17,8 @@ The site connects my public repositories, technical case studies, CV, LinkedIn a
 
 ## Featured case studies
 
-- PredictMyGrade — Django / Python / Playwright
+- PredictMyGrade — live product · Django / PostgreSQL / scikit-learn / Playwright
+- ReplyKit (ServiceDesk Toolkit) — live product · Chrome extension (Manifest V3) / JavaScript / Playwright
 - Student Toolkit OS — React Native / Expo / TypeScript
 - Guardian Antivirus — Python / PySide6 / ClamAV / Linux
 - Academic Performance Calculator — Java / Maven / JUnit / random forest

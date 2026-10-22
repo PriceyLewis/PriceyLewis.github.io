@@ -53,3 +53,32 @@ if (navToggle && navLinks) {
     if (window.innerWidth > 860) setNavOpen(false);
   });
 }
+
+// A miniature ReplyKit: expands a shortcut as soon as it is fully typed.
+const replyDemo = document.querySelector('[data-replykit-demo]');
+const replyStatus = document.querySelector('[data-replykit-status]');
+
+if (replyDemo) {
+  const snippets = {
+    ';thanks': 'Hi,\n\nThanks for getting in touch. I’ve logged this as a ticket and we’ll update you as soon as we have more information.\n\nKind regards,\nService Desk',
+    ';unlock': 'Hi,\n\nYour account has now been unlocked. Please sign in again, and if you’re asked to, choose a new password.\n\nKind regards,\nService Desk',
+    ';escalate': 'Hi,\n\nI’ve escalated this to our specialist team with the details you’ve provided. They’ll be in touch directly with next steps.\n\nKind regards,\nService Desk'
+  };
+
+  replyDemo.addEventListener('input', () => {
+    const caret = replyDemo.selectionStart;
+    const before = replyDemo.value.slice(0, caret);
+    const shortcut = Object.keys(snippets).find((key) => {
+      if (!before.endsWith(key)) return false;
+      const prev = before.charAt(before.length - key.length - 1);
+      return prev === '' || /\s/.test(prev);
+    });
+    if (!shortcut) return;
+    const start = caret - shortcut.length;
+    replyDemo.setRangeText(snippets[shortcut], start, caret, 'end');
+    if (replyStatus) {
+      replyStatus.textContent = `Expanded ${shortcut} — the extension does this in any web app.`;
+      replyStatus.classList.add('is-hit');
+    }
+  });
+}

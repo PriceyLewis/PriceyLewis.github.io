@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0d12">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="ReplyKit (ServiceDesk Toolkit) — a Chrome extension I built from my service desk work: type a shortcut like ;thanks in any text box and it expands into a saved reply. Manifest V3, licensing, unit and browser tests.">
+  <meta property="og:title" content="ReplyKit — Service Desk Chrome Extension | Lewis Price">
+  <meta property="og:description" content="A Chrome extension for canned replies, built from day-to-day service desk work. Manifest V3, privacy-first storage, paid licensing and Playwright-tested text expansion.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://priceylewis.github.io/projects/replykit.html">
+  <meta property="og:image" content="https://priceylewis.github.io/assets/screenshots/replykit-expand.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="ReplyKit expanding the ;pricing shortcut into a full email reply">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReplyKit — Service Desk Chrome Extension | Lewis Price">
+  <meta name="twitter:description" content="A Chrome extension for canned replies, built from day-to-day service desk work.">
+  <meta name="twitter:image" content="https://priceylewis.github.io/assets/screenshots/replykit-expand.jpg">
+  <link rel="canonical" href="https://priceylewis.github.io/projects/replykit.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../site.webmanifest">
+  <title>ReplyKit — Service Desk Chrome Extension | Lewis Price</title>
+  <link rel="stylesheet" href="../styles.css">
+</head><body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html" aria-label="Lewis Price portfolio home">Lewis<span>.</span>Price</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="primary-navigation" aria-label="Project navigation">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact">Contact</a>
+      <a class="nav-cta" href="https://getreplykit.netlify.app/" target="_blank" rel="noreferrer">Product site ↗</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+<section class="case-hero"><div class="container">
+<a class="breadcrumb" href="../index.html#projects">← Back to selected projects</a>
+<div class="eyebrow">Browser extension · Built from service desk work</div>
+<h1>ReplyKit</h1>
+<p class="lede">A Chrome extension that started life as my <em>ServiceDesk Toolkit</em>. On the service desk I was typing the same updates, unlock confirmations and escalation notes dozens of times a day, so I built a tool that turns a short shortcut like <code>;thanks</code> into the full reply — in any web-based ticketing system, inbox or chat tool.</p>
+<div class="hero-actions"><a class="btn primary" href="https://getreplykit.netlify.app/" target="_blank" rel="noreferrer">Visit product site ↗</a><a class="btn secondary" href="#how-it-works">How it works</a></div>
+</div></section>
+<section class="section" style="padding-top:20px"><div class="container case-grid"><div class="case-main">
+<div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/replykit-fields.jpg" target="_blank" rel="noopener" aria-label="Open ReplyKit fill-in fields screenshot"><img class="case-shot-image" src="../assets/screenshots/replykit-fields.jpg" alt="Help desk ticket where typing ;unlock opens a ReplyKit prompt for the user's name and ticket number" width="1280" height="800" loading="lazy" decoding="async"></a><div class="shot-caption">The service desk use case: <code>;unlock</code> asks for the name and ticket number, then writes the whole “account unlocked” reply into the ticket.</div></div>
+
+<div class="case-card"><h2>The problem</h2><p>A 1st line service desk sends the same handful of messages all day: “we’ve logged your ticket”, “your account is unlocked”, “this has been escalated to the network team”. Typing them by hand is slow and inconsistent, and copy-pasting from a notes file means leaving the ticket and fixing names and reference numbers afterwards.</p><p class="callout">I wanted something that works inside whatever web tool the team already uses, keeps replies consistent across a team, and never sends customer text anywhere.</p></div>
+
+<div class="case-card"><h2>What I built</h2><ul><li><strong>Shortcut expansion in any text box:</strong> type <code>;thanks</code>, <code>;unlock</code> or <code>;escalate</code> and the shortcut is replaced with the saved reply as soon as it is fully typed.</li><li><strong>Fill-in fields:</strong> <code>{{name}}</code>, <code>{{ticket number}}</code> or any custom field prompts for a value on expansion; <code>{{date}}</code>, <code>{{time}}</code> and <code>{{cursor}}</code> fill themselves in.</li><li><strong>Snippet manager:</strong> search, folders, import/export and a shared team file so a whole desk works from one set of replies.</li><li><strong>Toolbar popup:</strong> search replies and click to copy, or switch expansion off instantly.</li><li><strong>Free and Pro plans:</strong> licence keys with per-seat limits sold through Lemon Squeezy, which handles payment and UK VAT.</li><li><strong>Product website:</strong> home, pricing, privacy policy, terms and post-purchase activation pages.</li></ul></div>
+
+<div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/replykit-expand.jpg" target="_blank" rel="noopener" aria-label="Open ReplyKit shortcut expansion screenshot"><img class="case-shot-image" src="../assets/screenshots/replykit-expand.jpg" alt="Web mail reply where the ;pricing shortcut has expanded into a full pricing email" width="1280" height="800" loading="lazy" decoding="async"></a><div class="shot-caption">Typing <code>;pricing</code> in a web mail reply box expands into the full saved message. Ctrl+Z undoes it.</div></div>
+
+<div class="case-card" id="how-it-works"><h2>How it works</h2><ul><li><strong>Pure, testable core:</strong> shortcut matching, validation, plan limits, field filling and import/export live in one module with no DOM or <code>chrome.*</code> calls, so it is unit-tested under Node.</li><li><strong>Plays nicely with real web apps:</strong> the content script replaces text through <code>insertText</code>, which keeps Ctrl+Z working and lets React-based ticketing tools notice the change, with a fallback for pages that refuse the command.</li><li><strong>No ambiguous shortcuts:</strong> because expansion is instant, one shortcut can’t be the prefix of another (<code>;pw</code> vs <code>;pwreset</code>); the editor and importer reject those clashes up front.</li><li><strong>Private by design:</strong> snippets stay in <code>chrome.storage.local</code> and are never synced or uploaded. Only the few characters before the caret are read, and password fields are ignored.</li><li><strong>Licensing that can’t be switched on from DevTools:</strong> a background service worker is the only networked code. It activates and re-checks keys with Lemon Squeezy, accepts only keys for this store and product, and turns Pro back off if it was enabled any other way — with a 14-day offline grace period.</li><li><strong>Nothing is lost on downgrade:</strong> if a licence lapses the oldest ten snippets keep working and the rest are paused, not deleted.</li></ul></div>
+
+<div class="case-card"><h2>Architecture</h2><div class="architecture">Any web page (ticketing, email, chat)
+            ↓  keystrokes before caret
+     content.js ── core.js (pure logic)
+            ↓              ↑
+     storage.js ── chrome.storage.local
+            ↑
+ options / popup UI      background.js
+                              ↓
+                        licence.js ── Lemon Squeezy API</div></div>
+
+<div class="case-card case-shot"><a class="screenshot-link" href="../assets/screenshots/replykit-manager.jpg" target="_blank" rel="noopener" aria-label="Open ReplyKit snippet manager screenshot"><img class="case-shot-image" src="../assets/screenshots/replykit-manager.jpg" alt="ReplyKit snippet manager with folders, a Pro team licence and a reply using name and company fields" width="1280" height="800" loading="lazy" decoding="async"></a><div class="shot-caption">The snippet manager: folders, search, fill-in fields and a team licence showing seats in use.</div></div>
+
+<div class="case-card"><h2>Verification</h2><p>Unit tests cover the core logic under Node’s built-in test runner. Two Playwright suites load the unpacked extension into Chromium: one types into real textareas, inputs and rich-text editors and checks expansion, undo, password-field skipping and fill-in fields; the other runs the full licence lifecycle — unknown keys, full seats, activation, expiry, renewal without using a second seat, offline errors and freeing a seat — against a fake Lemon Squeezy server, and asserts that snippet text is never sent to it. Store screenshots are regenerated from the real UI with a script.</p>
+<div class="verification-grid"><div><strong>Node unit tests</strong><span>Matching, validation, limits, fields, import/export</span></div><div><strong>Playwright e2e</strong><span>Real typing into real text boxes in Chromium</span></div><div><strong>Licence e2e</strong><span>Fake payment server: seats, expiry, renewal, privacy</span></div><div><strong>Manifest V3</strong><span>Minimal permissions: storage, alarms, one API host</span></div></div></div>
+
+<div class="case-card"><h2>What this demonstrates</h2><p>ReplyKit is where my two jobs meet: it came from a real frustration on the service desk, and I took it all the way to a product — browser APIs, careful handling of other people’s web apps, privacy decisions, a payment and licensing model, automated tests and a public website. It also shows I can take a tool built for one team and generalise it for support, sales and recruiting teams without losing the original use case.</p></div>
+</div><aside class="case-side"><div class="case-card"><h2>Project snapshot</h2><div class="stat-list"><div class="stat"><strong>Type</strong><span>Chrome extension (Manifest V3)</span></div><div class="stat"><strong>Stack</strong><span>JavaScript, Chrome APIs, Lemon Squeezy, Playwright</span></div><div class="stat"><strong>My role</strong><span>Solo: idea, build, tests, website, licensing</span></div><div class="stat"><strong>Origin</strong><span>ServiceDesk Toolkit — built for my own service desk work</span></div><div class="stat"><strong>Plans</strong><span>Free · Pro · Team seats</span></div><div class="stat"><strong>Source code</strong><span>Private (commercial product)</span></div></div></div><div class="case-actions"><a class="btn primary" href="https://getreplykit.netlify.app/" target="_blank" rel="noreferrer">Visit product site ↗</a><a class="btn secondary" href="../index.html#contact">Contact me</a></div></aside></div></section>
+</main>
+<footer><div class="container footer-inner"><span>© <span data-year></span> Lewis Price</span><a href="../index.html">Portfolio home</a></div></footer><script src="../script.js"></script></body></html>
