@@ -60,9 +60,9 @@ const replyStatus = document.querySelector('[data-replykit-status]');
 
 if (replyDemo) {
   const snippets = {
-    ';thanks': 'Hi,\n\nThanks for getting in touch. I’ve logged this as a ticket and we’ll update you as soon as we have more information.\n\nKind regards,\nService Desk',
-    ';unlock': 'Hi,\n\nYour account has now been unlocked. Please sign in again, and if you’re asked to, choose a new password.\n\nKind regards,\nService Desk',
-    ';escalate': 'Hi,\n\nI’ve escalated this to our specialist team with the details you’ve provided. They’ll be in touch directly with next steps.\n\nKind regards,\nService Desk'
+    ';thanks': 'Hi,\n\nThanks for getting in touch. I’ve logged this as a ticket and we’ll update you as soon as we have more information.\n\nKind regards,\nThe Support Team',
+    ';unlock': 'Hi,\n\nYour account has now been unlocked. Please sign in again, and if you’re asked to, choose a new password.\n\nKind regards,\nThe Support Team',
+    ';escalate': 'Hi,\n\nI’ve escalated this to our specialist team with the details you’ve provided. They’ll be in touch directly with next steps.\n\nKind regards,\nThe Support Team'
   };
 
   replyDemo.addEventListener('input', () => {
