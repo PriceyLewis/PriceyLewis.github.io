@@ -94,7 +94,7 @@ jobs:
             await page.locator('h1').waitFor();
             await checkLayout(page, 'portfolio-' + suffix);
             await screenshot(page, 'portfolio-' + suffix);
-            for (const path of ['projects/predictmygrade.html','projects/student-toolkit.html','projects/dissertation.html','projects/guardian.html','projects/pc-part-picker.html']) {
+            for (const path of ['projects/predictmygrade.html','projects/replykit.html','projects/student-toolkit.html','projects/dissertation.html','projects/guardian.html','projects/pc-part-picker.html']) {
               await waitHealthy(page, urls.portfolio + path);
               await page.locator('h1').waitFor();
               await checkLayout(page, path + '-' + suffix);
